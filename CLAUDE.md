@@ -40,6 +40,15 @@ To preview print/PDF export mode, use the browser's Print dialog — a `@media p
 
 - All spacing, color, and typography values must use the CSS custom properties defined in `variables.css` — do not hardcode values.
 - Cache-busting is done with `?v=1.1` query params on CSS/JS `<link>`/`<script>` tags — increment when making changes to those files.
-- Tech icons are loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `api.iconify.design` CDNs. Company-specific logos (Databricks, Snowflake, client logos) are local PNGs in `assets/`.
+- Tech icons are loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `api.iconify.design` CDNs. Company-specific logos (Databricks, Snowflake) are local PNGs in `assets/`. Client logos (Milliman, RGA, Prudential, TeamLease) exist as both `.png` and `.svg` in `assets/`.
+- `assets/` also contains two PDFs: `Yash_Bhatt_Resume.pdf` and `Yash_Actuarial_Analytics_Proposal.pdf` — linked from the `#resume` section.
 - Hero carousel uses `.png` images (`assets/img1.png`–`img5.png`). Both `.png` and `.jpg` versions exist in `assets/` — HTML references `.png`.
 - The contact form does **not** submit to a backend — it is a UI-only simulation that shows a success alert and resets the form.
+
+## GitHub Actions
+
+Two workflows run automatically on PRs (`.github/workflows/`):
+- `claude-code-review.yml` — runs Claude code review via `anthropics/claude-code-action` on every PR open/sync.
+- `claude.yml` — Claude PR assistant (interactive, triggered by comments).
+
+Both require a `CLAUDE_CODE_OAUTH_TOKEN` secret in the repository settings.
