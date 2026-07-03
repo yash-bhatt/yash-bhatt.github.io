@@ -7,11 +7,11 @@
   <title>Yash Bhatt | Actuarial Pricing & Analytics Consultant</title>
   
   <!-- CSS Stylesheet Modules -->
-  <link rel="stylesheet" href="css/variables.css?v=1.1">
-  <link rel="stylesheet" href="css/base.css?v=1.1">
-  <link rel="stylesheet" href="css/layout.css?v=1.1">
-  <link rel="stylesheet" href="css/components.css?v=1.1">
-  <link rel="stylesheet" href="css/animations.css?v=1.1">
+  <link rel="stylesheet" href="css/variables.css?v=1.4">
+  <link rel="stylesheet" href="css/base.css?v=1.4">
+  <link rel="stylesheet" href="css/layout.css?v=1.4">
+  <link rel="stylesheet" href="css/components.css?v=1.4">
+  <link rel="stylesheet" href="css/animations.css?v=1.4">
 
   <!-- Print Stylesheet for PDF CV Generation -->
   <style>
@@ -63,7 +63,16 @@
           <li><a href="#about" class="nav-link">Expertise</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#skills" class="nav-link">Tools</a></li>
-          <li><a href="#insights" class="nav-link">Insights</a></li>
+          <li class="nav-item dropdown">
+            <a href="#insights" class="nav-link dropdown-toggle">Articles</a>
+            <ul class="dropdown-menu">
+              <li><a href="articles/parametric-insurance-climate-risk.html" class="dropdown-item">1. Parametric Climate Risk</a></li>
+              <li><a href="articles/designing-pricing-multi-peril-parametric.html" class="dropdown-item">2. Designing Parametric Products</a></li>
+              <li><a href="articles/predictive-analytics-life-insurance.html" class="dropdown-item">3. Predictive Analytics in Life</a></li>
+              <li><a href="articles/modernizing-actuarial-modeling-vm21.html" class="dropdown-item">4. Modernizing VM-21 Reserving</a></li>
+              <li><a href="articles/billion-record-experience-study-spark.html" class="dropdown-item">5. Billion-Record Study Pipelines</a></li>
+            </ul>
+          </li>
           <li><a href="#contact" class="nav-link btn btn-secondary">Get in Touch</a></li>
         </ul>
       </nav>
@@ -98,7 +107,7 @@
         <li><a href="#about" class="mobile-nav-link">Expertise</a></li>
         <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
         <li><a href="#skills" class="mobile-nav-link">Tools</a></li>
-        <li><a href="#insights" class="mobile-nav-link">Insights</a></li>
+        <li><a href="#insights" class="mobile-nav-link">Articles</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -151,19 +160,19 @@
         <div class="client-logo-wrapper">
           <!-- Milliman Logo -->
           <div class="client-logo-card" aria-label="Milliman">
-            <img src="assets/milliman_logo.svg" alt="Milliman Logo" class="client-logo-img">
+            <img src="assets/milliman_logo.png" alt="Milliman Logo" class="client-logo-img">
           </div>
           <!-- RGA Logo -->
           <div class="client-logo-card" aria-label="RGA">
-            <img src="assets/rga_logo.svg" alt="RGA Logo" class="client-logo-img">
+            <img src="assets/rga_logo.png" alt="RGA Logo" class="client-logo-img">
           </div>
           <!-- Prudential Logo -->
           <div class="client-logo-card" aria-label="Prudential">
-            <img src="assets/prudential_logo.svg" alt="Prudential Logo" class="client-logo-img">
+            <img src="assets/prudential_logo.png" alt="Prudential Logo" class="client-logo-img">
           </div>
           <!-- TeamLease Logo -->
           <div class="client-logo-card" aria-label="TeamLease">
-            <img src="assets/teamlease_logo_new.png" alt="TeamLease Logo" class="client-logo-img">
+            <img src="assets/teamlease_logo.png" alt="TeamLease Logo" class="client-logo-img">
           </div>
         </div>
       </div>
@@ -517,16 +526,12 @@
           
           <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); margin-block: var(--spacing-sm); text-align: left; width: 100%; max-width: 480px; margin-inline: auto;">
             <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-surface-border); padding-bottom: var(--spacing-xs);">
-              <span style="font-weight: 600;">Associate of Actuaries (AIA)</span>
-              <span style="color: var(--color-accent); font-weight: 700;">Exams CS1-2, CM1-2, CB1-3, CP1-3</span>
+              <span style="font-weight: 600;">Associate of Institute of Actuaries (AIA)</span>
+              <span></span>
             </div>
             <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-surface-border); padding-bottom: var(--spacing-xs);">
               <span style="font-weight: 600;">B.Sc. (H) Mathematics</span>
               <span>Delhi University (Kirori Mal)</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-surface-border); padding-bottom: var(--spacing-xs);">
-              <span style="font-weight: 600;">Senior Secondary (CBSE)</span>
-              <span>95% Class XII Score</span>
             </div>
           </div>
 
@@ -556,15 +561,30 @@
       </div>
     </section>
 
-    <!-- LinkedIn Featured Insights -->
+    <!-- Featured Insights & Articles Section -->
     <section class="section" id="insights">
       <div class="container">
         <div style="max-width: 700px; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Actuarial Thoughts</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Featured Insights & Case Studies</h2>
-          <p style="color: var(--color-text-secondary);">
-            Explaining actuarial assumptions and computing pipelines through articles published on LinkedIn.
+          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Insights</span>
+          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Articles</h2>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            Deep dives into climate risk triggers, distributed spark pipelines, and machine learning models in actuarial practice.
           </p>
+          
+          <!-- Quick Selection Dropdown -->
+          <div style="position: relative; display: inline-block; margin-top: var(--spacing-xs);">
+            <select onchange="if(this.value) window.location.href=this.value" style="background-color: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-surface-border); padding: 8px 32px 8px 12px; border-radius: var(--radius-sm); font-size: var(--font-size-xs); cursor: pointer; appearance: none; -webkit-appearance: none; font-weight: 500; min-width: 280px; outline: none; transition: border-color 0.2s;">
+              <option value="" selected disabled>Select an article to read...</option>
+              <option value="articles/parametric-insurance-climate-risk.html">1. Parametric Insurance & Climate Risk</option>
+              <option value="articles/designing-pricing-multi-peril-parametric.html">2. Designing & Pricing Parametric Products</option>
+              <option value="articles/predictive-analytics-life-insurance.html">3. Predictive Analytics in Life Insurance</option>
+              <option value="articles/modernizing-actuarial-modeling-vm21.html">4. Modernizing Actuarial Modeling (VM-21)</option>
+              <option value="articles/billion-record-experience-study-spark.html">5. Billion-Record Experience Study Pipelines</option>
+            </select>
+            <div style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-text-muted); font-size: 10px;">
+              ▼
+            </div>
+          </div>
         </div>
 
         <div class="grid grid-3">
@@ -572,29 +592,29 @@
           <div class="insight-card scroll-reveal">
             <span class="insight-badge">Parametric Climate</span>
             <div class="insight-content">
-              <h3 class="insight-title">Trigger Mechanics & Basis Risk in Climate Parametrics</h3>
+              <h3 class="insight-title">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk</h3>
               <p class="insight-excerpt">
-                How triggers (heat, rain, air quality) are structured for South-East Asian peril programs. Analyzing historical correlation indexes and burn cost loadings to minimize basis mismatch risk.
+                Traditional indemnity insurance can take months to pay. Parametric insurance pays instantly on index breach. Exploring trigger speed and transparency in emerging markets.
               </p>
             </div>
             <div class="insight-footer">
               <span class="insight-date">Published May 2026</span>
-              <a href="https://linkedin.com/in/yashbhatt28" class="btn btn-link" target="_blank" rel="noopener">Read on LinkedIn →</a>
+              <a href="articles/parametric-insurance-climate-risk.html" class="btn btn-link">Read Article &rarr;</a>
             </div>
           </div>
 
           <!-- Article 2 -->
           <div class="insight-card scroll-reveal">
-            <span class="insight-badge">Distributed Systems</span>
+            <span class="insight-badge">Parametric Climate</span>
             <div class="insight-content">
-              <h3 class="insight-title">Scaling 1 Billion Annuity Records on PySpark</h3>
+              <h3 class="insight-title">Designing and Pricing a Multi-Peril Parametric Product</h3>
               <p class="insight-excerpt">
-                A breakdown of model migrations from legacy systems to Databricks/Delta Lake. How query optimizations and cluster layout reductions cut pricing computation runs by over 40%.
+                A practitioner's guide to index calibration, payout structures, historical burn cost, average annual loss (AAL), and Python-based stress testing for regional portfolios.
               </p>
             </div>
             <div class="insight-footer">
-              <span class="insight-date">Published Mar 2026</span>
-              <a href="https://linkedin.com/in/yashbhatt28" class="btn btn-link" target="_blank" rel="noopener">Read on LinkedIn →</a>
+              <span class="insight-date">Published May 2026</span>
+              <a href="articles/designing-pricing-multi-peril-parametric.html" class="btn btn-link">Read Article &rarr;</a>
             </div>
           </div>
 
@@ -602,14 +622,44 @@
           <div class="insight-card scroll-reveal">
             <span class="insight-badge">Reinsurance Pricing</span>
             <div class="insight-content">
-              <h3 class="insight-title">Mortality Improvement Curve Smoothing</h3>
+              <h3 class="insight-title">Predictive Analytics in Life Insurance: From Mortality to ML</h3>
               <p class="insight-excerpt">
-                Calibrating long-term mortality basis vectors using GLM splines and standard mortality laws. A technical look at using XGBoost to detect life table risk relativities.
+                Calibrating mortality improvement curves using splines/GLMs, building XGBoost risk scores for reinsurance pricing, and modeling shock annuity surrenders in high-rate climates.
               </p>
             </div>
             <div class="insight-footer">
-              <span class="insight-date">Published Jan 2026</span>
-              <a href="https://linkedin.com/in/yashbhatt28" class="btn btn-link" target="_blank" rel="noopener">Read on LinkedIn →</a>
+              <span class="insight-date">Published May 2026</span>
+              <a href="articles/predictive-analytics-life-insurance.html" class="btn btn-link">Read Article &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="insight-card scroll-reveal">
+            <span class="insight-badge">Distributed Systems</span>
+            <div class="insight-content">
+              <h3 class="insight-title">Modernizing Actuarial Modeling: Moving VM-21 to Databricks</h3>
+              <p class="insight-excerpt">
+                Moving VM-21 principle-based reserving calculations off Excel and onto Spark/Delta Lake. Achieving 10x runtimes, robust model risk governance, and full audit trails.
+              </p>
+            </div>
+            <div class="insight-footer">
+              <span class="insight-date">Published May 2026</span>
+              <a href="articles/modernizing-actuarial-modeling-vm21.html" class="btn btn-link">Read Article &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="insight-card scroll-reveal">
+            <span class="insight-badge">Distributed Systems</span>
+            <div class="insight-content">
+              <h3 class="insight-title">Building Billion-Record Study Pipelines with Spark & MLflow</h3>
+              <p class="insight-excerpt">
+                How a medallion lakehouse design pattern and optimized PySpark SQL scale studies of 1B+ annuity records, with MLflow tracking and sparkR transition bridges.
+              </p>
+            </div>
+            <div class="insight-footer">
+              <span class="insight-date">Published May 2026</span>
+              <a href="articles/billion-record-experience-study-spark.html" class="btn btn-link">Read Article &rarr;</a>
             </div>
           </div>
         </div>
@@ -713,7 +763,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=1.1"></script>
-  <script src="js/scroll-effects.js?v=1.1"></script>
+  <script src="js/main.js?v=1.4"></script>
+  <script src="js/scroll-effects.js?v=1.4"></script>
 </body>
 </html>
