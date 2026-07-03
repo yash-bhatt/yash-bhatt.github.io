@@ -14,53 +14,55 @@ const initPortfolio = () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial run
 
-  // ==========================================================================
   // Mobile Navigation (A11y Compliant)
   // ==========================================================================
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
   
-  const toggleMenu = () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', isOpen);
-    menuBtn.classList.toggle('open');
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  if (menuBtn && mobileMenu) {
+    const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
     
-    if (isOpen) {
-      // Focus first link on opening
-      setTimeout(() => mobileLinks[0].focus(), 100);
-    }
-  };
-
-  menuBtn.addEventListener('click', toggleMenu);
-  
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      // Close menu on selecting a link
-      mobileMenu.classList.remove('open');
-      menuBtn.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Focus Trapping for mobile menu accessibility
-  mobileMenu.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-      const focusables = Array.from(mobileLinks);
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-
-      if (e.shiftKey && document.activeElement === first) {
-        last.focus();
-        e.preventDefault();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        first.focus();
-        e.preventDefault();
+    const toggleMenu = () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      menuBtn.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      
+      if (isOpen) {
+        // Focus first link on opening
+        setTimeout(() => mobileLinks[0].focus(), 100);
       }
-    }
-  });
+    };
+
+    menuBtn.addEventListener('click', toggleMenu);
+    
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Close menu on selecting a link
+        mobileMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Focus Trapping for mobile menu accessibility
+    mobileMenu.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        const focusables = Array.from(mobileLinks);
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          last.focus();
+          e.preventDefault();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          first.focus();
+          e.preventDefault();
+        }
+      }
+    });
+  }
 
   // ==========================================================================
   // Theme Management (Native Color-Scheme Toggle)
@@ -89,11 +91,13 @@ const initPortfolio = () => {
   const initialTheme = getThemePreference();
   applyTheme(initialTheme);
 
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.style.colorScheme || initialTheme;
-    const next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.style.colorScheme || initialTheme;
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  }
 
   // Listen for system changes if no override is set
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -111,51 +115,53 @@ const initPortfolio = () => {
   const alertSuccess = document.getElementById('formAlertSuccess');
   const alertError = document.getElementById('formAlertError');
 
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const controls = contactForm.querySelectorAll('.form-control');
+      const controls = contactForm.querySelectorAll('.form-control');
 
-    if (!contactForm.checkValidity()) {
-      alertSuccess.style.display = 'none';
-      alertError.style.display = 'block';
-      controls.forEach(control => {
-        if (!control.validity.valid) {
-          control.classList.add('invalid-shake');
-          setTimeout(() => control.classList.remove('invalid-shake'), 500);
-        }
-      });
-      return;
-    }
-
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-
-    try {
-      const response = await fetch('https://formspree.io/f/xdavbako', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(contactForm),
-      });
-
-      if (response.ok) {
-        alertError.style.display = 'none';
-        alertSuccess.style.display = 'block';
-        contactForm.reset();
-        setTimeout(() => { alertSuccess.style.display = 'none'; }, 6000);
-      } else {
+      if (!contactForm.checkValidity()) {
         alertSuccess.style.display = 'none';
         alertError.style.display = 'block';
+        controls.forEach(control => {
+          if (!control.validity.valid) {
+            control.classList.add('invalid-shake');
+            setTimeout(() => control.classList.remove('invalid-shake'), 500);
+          }
+        });
+        return;
       }
-    } catch {
-      alertSuccess.style.display = 'none';
-      alertError.style.display = 'block';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Secure Message';
-    }
-  });
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const response = await fetch('https://formspree.io/f/xdavbako', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm),
+        });
+
+        if (response.ok) {
+          alertError.style.display = 'none';
+          alertSuccess.style.display = 'block';
+          contactForm.reset();
+          setTimeout(() => { alertSuccess.style.display = 'none'; }, 6000);
+        } else {
+          alertSuccess.style.display = 'none';
+          alertError.style.display = 'block';
+        }
+      } catch {
+        alertSuccess.style.display = 'none';
+        alertError.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Secure Message';
+      }
+    });
+  }
 
   // ==========================================================================
   // Scroll Navigation Active Highlighting
@@ -199,9 +205,16 @@ const initPortfolio = () => {
   if (slides.length > 0) {
     let currentSlide = 0;
     const nextSlide = () => {
-      slides[currentSlide].classList.remove('active');
+      const prevSlide = currentSlide;
+      slides[prevSlide].classList.remove('active');
+      slides[prevSlide].classList.add('outgoing');
+      
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
+      
+      setTimeout(() => {
+        slides[prevSlide].classList.remove('outgoing');
+      }, 1500); // matches the CSS transition time of 1.5s
     };
     setInterval(nextSlide, 5000); // Transition slide every 5 seconds
 

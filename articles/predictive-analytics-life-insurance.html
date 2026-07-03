@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning - Yash Bhatt Insights">
+  <title>Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning | Yash Bhatt | Actuarial Pricing & Analytics Consultant</title>
+  
+  <!-- CSS Stylesheet Modules -->
+  <link rel="stylesheet" href="../css/variables.css?v=1.4">
+  <link rel="stylesheet" href="../css/base.css?v=1.4">
+  <link rel="stylesheet" href="../css/layout.css?v=1.4">
+  <link rel="stylesheet" href="../css/components.css?v=1.4">
+  <link rel="stylesheet" href="../css/animations.css?v=1.4">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Header Section -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="../index.html#hero" class="logo" aria-label="Yash Bhatt Home">
+        YASH BHATT
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html#about" class="nav-link">Expertise</a></li>
+          <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+          <li><a href="../index.html#skills" class="nav-link">Tools</a></li>
+          <li class="nav-item dropdown">
+            <a href="../index.html#insights" class="nav-link dropdown-toggle active">Articles</a>
+            <ul class="dropdown-menu">
+              <li><a href="parametric-insurance-climate-risk.html" class="dropdown-item">1. Parametric Climate Risk</a></li>
+              <li><a href="designing-pricing-multi-peril-parametric.html" class="dropdown-item">2. Designing Parametric Products</a></li>
+              <li><a href="predictive-analytics-life-insurance.html" class="dropdown-item">3. Predictive Analytics in Life</a></li>
+              <li><a href="modernizing-actuarial-modeling-vm21.html" class="dropdown-item">4. Modernizing VM-21 Reserving</a></li>
+              <li><a href="billion-record-experience-study-spark.html" class="dropdown-item">5. Billion-Record Study Pipelines</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html#contact" class="nav-link btn btn-secondary">Get in Touch</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Hamburger -->
+      <div class="flex-center" style="gap: var(--spacing-md);">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" style="cursor: pointer; padding: var(--spacing-xs); display: flex; align-items: center; border-radius: var(--radius-sm); border: 1px solid var(--color-surface-border);">
+          <!-- Sun Icon (shows in dark theme) -->
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--sun-display, block); color: var(--color-text-primary);">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <!-- Moon Icon (shows in light theme) -->
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--moon-display, none); color: var(--color-text-primary);">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <span class="menu-btn-bar"></span>
+          <span class="menu-btn-bar"></span>
+          <span class="menu-btn-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="../index.html#about" class="mobile-nav-link">Expertise</a></li>
+        <li><a href="../index.html#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="../index.html#skills" class="mobile-nav-link">Tools</a></li>
+        <li><a href="../index.html#insights" class="mobile-nav-link">Articles</a></li>
+        <li><a href="../index.html#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main style="padding-top: calc(var(--header-height) + var(--spacing-xl)); padding-bottom: var(--spacing-xxl);">
+    <article class="container-narrow">
+      
+      <!-- Back Link and Dropdown Navigation Selector -->
+      <div style="margin-bottom: var(--spacing-lg); display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center;">
+        <a href="../index.html#insights" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: var(--spacing-xs) var(--spacing-md); font-size: var(--font-size-xs); line-height: 1; margin: 0;">
+          &larr; Back to Articles
+        </a>
+        <div style="position: relative; display: inline-block;">
+          <select onchange="if(this.value) window.location.href=this.value" style="background-color: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-surface-border); padding: 8px 32px 8px 12px; border-radius: var(--radius-sm); font-size: var(--font-size-xs); cursor: pointer; appearance: none; -webkit-appearance: none; font-weight: 500; min-width: 250px; outline: none; transition: border-color 0.2s;">
+            <option value="" disabled>Select an article to read...</option>
+            <option value="parametric-insurance-climate-risk.html" >1. Parametric Insurance & Climate Risk</option>
+            <option value="designing-pricing-multi-peril-parametric.html" >2. Designing & Pricing Parametric Products</option>
+            <option value="predictive-analytics-life-insurance.html" selected>3. Predictive Analytics in Life Insurance</option>
+            <option value="modernizing-actuarial-modeling-vm21.html" >4. Modernizing Actuarial Modeling (VM-21)</option>
+            <option value="billion-record-experience-study-spark.html" >5. Billion-Record Experience Study Pipelines</option>
+          </select>
+          <div style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-text-muted); font-size: 10px;">
+            ▼
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Header -->
+      <header style="margin-bottom: var(--spacing-xl);">
+        <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.08em; background-color: var(--color-accent-subtle); padding: 4px 8px; border-radius: 4px;">
+          Reinsurance Pricing
+        </span>
+        <h1 style="font-size: var(--font-size-xl); margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); line-height: 1.2; font-family: var(--font-heading); font-weight: 800; color: var(--color-text-primary);">
+          Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning
+        </h1>
+        <div style="color: var(--color-text-muted); font-size: var(--font-size-xs); display: flex; gap: var(--spacing-md); align-items: center;">
+          <span>Published May 2026</span>
+          <span>•</span>
+          <span>6 min read</span>
+          <span>•</span>
+          <span>By Yash Bhatt</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-body" style="color: var(--color-text-secondary); line-height: var(--line-height-body); font-size: var(--font-size-base);">
+        
+<p>Life insurance has always been a data business. What's changed over the last several years is the sophistication of what we can do with that data — and the speed at which the discipline is moving from static, table-driven assumptions to dynamic, model-driven insight. I've worked across this spectrum: building mortality curves with classical actuarial techniques, and building machine-learning models to flag high-risk lives and decode policyholder behavior. Here's how I see the state of play.</p>
+
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Mortality: the foundation still matters</h2>
+
+<p>Everything in life insurance rests on the mortality assumption, and building a credible mortality basis is still core actuarial craft. I've built and calibrated mortality curves using actuarial laws and GLM spline models, and analyzed mortality improvement using industry (IIB) and census data.</p>
+
+<p>The reason splines and GLMs remain central is that raw experience data is noisy, especially at older ages where exposure is thin. Graduation techniques — Whittaker graduation, cubic and penalized splines — smooth that noise into a stable, usable curve without over-fitting. (The CMI itself has long used Whittaker graduation for pensioner and annuitant rates.) A GLM framework lets you layer in explanatory factors while keeping the model interpretable and defensible to regulators.</p>
+
+<p>Mortality improvement is where this gets genuinely hard right now. The post-pandemic picture is messy. According to the CMI, 2025 death rates in England and Wales were nearly 2% lower than 2024 — itself the previous record low — extending five consecutive years of decline. But as CMI Chair Cobus Daneel noted, "the only exception was men aged 45-64, whose death rates remained concerningly above pre-pandemic levels for the sixth consecutive year." In the US, Group Life mortality has largely returned to pre-pandemic benefit ratios. The signal is diverging by age and cause, and setting a single improvement assumption on top of that requires judgment, not just extrapolation — a challenge that recent actuarial research has tackled by pairing classical Lee-Carter baselines with GAM and XGBoost layers to capture non-linear drivers.</p>
+
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Where machine learning earns its place</h2>
+
+<p>Layered on top of that classical foundation, machine learning adds real value in specific, well-defined places. On a reinsurance pricing engagement with RGA, I used predictive models — linear regression, logistic regression, and XGBoost — to assess risk relativities and flag high-risk lives.</p>
+
+<p>The point of using something like XGBoost isn't novelty; it's that gradient-boosted trees capture non-linear interactions between risk factors that a linear model misses. In mortality and morbidity work, models are increasingly used behind the scenes to generate risk scores that guide triage — deciding which cases can be fast-tracked and which need fuller evidence. That's exactly the direction the reinsurance market is heading: per its 2024 Annual Review, RGA's Individual Life team reviewed a record 120,000 facultative cases, and its MedScore tool "combines the predictive power of prescription drug and digital health data in a single risk assessment score for group insurers."</p>
+
+<p>The pattern I follow is to use the interpretable model (logistic/linear GLM) as the workhorse for anything that needs regulatory defensibility, and the machine-learning model (XGBoost) where predictive lift matters more than transparency — with careful validation using AUC, calibration plots, and out-of-sample testing.</p>
+
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Policyholder behavior and the annuity problem</h2>
+
+<p>The other frontier is behavior — lapse, surrender, and benefit utilization. I've developed predictive models in R to analyze policyholder behavior, lapse, and benefit-utilization patterns, and this became especially urgent for annuity products during the recent high-interest-rate environment.</p>
+
+<p>When rates spiked in 2022–2023, lapse behavior on fixed indexed annuities (FIAs) and multi-year guaranteed annuities (MYGAs) shifted dramatically. The scale was striking: in the LIMRA/SOA fixed-rate deferred annuity study, surrender rates in the year the surrender charge expired jumped to 54% by contract count in 2022, versus 29.7% for 2015–2019, and contract-year-six "shock" surrenders reached as high as 68.7% by contract value. Policyholders behave rationally: when a competitor offers a materially higher rate, they walk.</p>
+
+<p>For FIA and MYGA products in that environment, I built custom predictive models applying data bucketing plus supervised and unsupervised machine learning — for pricing, lapse analysis, and customer segmentation. Unsupervised clustering is genuinely useful here: it surfaces natural policyholder segments (by size, by rate sensitivity, by tenure) that you can then price and manage differently. Larger policies, for instance, lapse far more efficiently than small ones — industry studies show shock lapses for policies of $200,000 and over run roughly twice those of policies under $50,000 — so treating them identically leaves money on the table. This work is also becoming regulatory table stakes: emerging principle-based frameworks like VM-22 require insurers to use their own best-estimate dynamic behavior assumptions on deferred annuities.</p>
+
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">The governance dimension</h2>
+
+<p>None of this happens in a regulatory vacuum. The NAIC's Model Bulletin on the use of AI — adopted by the NAIC in December 2023 — has now been adopted by 24 states plus the District of Columbia, and it demands documented governance, transparency, and accountability for any model touching underwriting, rating, or claims. An AI System Evaluation Tool pilot is scheduled to run from March to September 2026. The practical implication: every predictive model needs an audit trail, documented validation, and someone accountable. Model risk management is no longer optional overhead — it's the price of deploying these tools at all.</p>
+
+<p>That combination — classical actuarial rigor plus modern machine learning, deployed inside a defensible governance framework — is where I focus. If you're modernizing your mortality basis, building lapse models for a shifting rate environment, or standing up predictive analytics for reinsurance pricing, I'd welcome a conversation.</p>
+
+      </div>
+
+      <!-- Article Footer / CTA -->
+      <hr style="border: 0; border-top: 1px solid var(--color-surface-border); margin-block: var(--spacing-xxl);">
+      
+      <div class="glass-card" style="padding: var(--spacing-xl); border-radius: var(--radius-md); text-align: center;">
+        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); color: var(--color-text-primary);">Need Expert Pricing & Modeling Solutions?</h3>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md); max-width: 600px; margin-inline: auto;">
+          I work with insurers, reinsurers, and consulting firms under flexible technical delivery frameworks to evaluate complex risks, model extreme scenarios, and modernise legacy calculations.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center;">
+          <a href="../index.html#contact" class="btn btn-primary">Start a Partnership</a>
+          <a href="../assets/Yash_Actuarial_Analytics_Proposal.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View Consulting Proposal</a>
+        </div>
+      </div>
+      
+      <!-- Read More Navigation -->
+      <div style="margin-top: var(--spacing-xxl);">
+        <h4 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-md); font-family: var(--font-heading); font-weight: 700; border-bottom: 2px solid var(--color-surface-border); padding-bottom: 8px; color: var(--color-text-primary);">
+          Other Featured Insights
+        </h4>
+        <div class="grid grid-2" style="gap: var(--spacing-md);">
+          
+          <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
+            <div>
+              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Parametric Climate</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk in Emerging Markets</h5>
+            </div>
+            <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
+              <span>May 2026</span>
+              <a href="parametric-insurance-climate-risk.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
+            </div>
+          </div>
+        
+          <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
+            <div>
+              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Parametric Climate</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Designing and Pricing a Multi-Peril Parametric Product: A Practitioner's Walkthrough</h5>
+            </div>
+            <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
+              <span>May 2026</span>
+              <a href="designing-pricing-multi-peril-parametric.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
+            </div>
+          </div>
+        
+          <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
+            <div>
+              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Modernizing Actuarial Modeling: Moving VM-21 and Statutory Calculations Off Excel and Onto Databricks</h5>
+            </div>
+            <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
+              <span>May 2026</span>
+              <a href="modernizing-actuarial-modeling-vm21.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
+            </div>
+          </div>
+        
+          <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
+            <div>
+              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Building Billion-Record Experience-Study Pipelines with Delta Lake, Spark, and MLflow</h5>
+            </div>
+            <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
+              <span>May 2026</span>
+              <a href="billion-record-experience-study-spark.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container footer-grid grid">
+      <div class="footer-brand">
+        <a href="../index.html#hero" class="logo" style="font-size: var(--font-size-md);">
+          YASH BHATT
+        </a>
+        <p class="footer-brand-text">
+          Independent Pricing & Product Development Consultant. Associate of the Institute of Actuaries.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-links-title">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="../index.html#about" class="footer-link">Expertise Capabilities</a></li>
+          <li><a href="../index.html#experience" class="footer-link">Experience Timeline</a></li>
+          <li><a href="../index.html#skills" class="footer-link">Tools & Tech</a></li>
+          <li><a href="../index.html#insights" class="footer-link">Insights</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-links-title">Professional Profiles</h3>
+        <ul class="footer-links-list">
+          <li><a href="https://linkedin.com/in/yashbhatt28" class="footer-link" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+          <li><a href="https://github.com/yash-bhatt" class="footer-link" target="_blank" rel="noopener">GitHub Profile</a></li>
+          <li><a href="mailto:b.yash289@gmail.com" class="footer-link">Email Direct</a></li>
+          <li><a href="tel:+919968112775" class="footer-link">Call +91 996-811-2775</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="currentYear">2026</span> Yash Bhatt Actuarial Analytics. All rights reserved.</p>
+      <p>Associate of the Institute and Faculty of Actuaries (AIA)</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js?v=1.4"></script>
+  <script src="../js/scroll-effects.js?v=1.4"></script>
+</body>
+</html>

@@ -86,7 +86,7 @@
   .logo {
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     color: var(--color-text-primary);
     display: flex;
     align-items: center;
@@ -318,11 +318,78 @@
     background-color: var(--color-bg-alt);
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
-    z-index: 0;
+    z-index: 1;
+  }
+
+  .hero-slide.outgoing {
+    opacity: 1;
+    z-index: 1;
   }
 
   .hero-slide.active {
     opacity: 1;
-    z-index: 1;
+    z-index: 2;
   }
+}
+
+/* ==========================================================================
+   Header Dropdown Menu Styles
+   ========================================================================== */
+.nav-list li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) 0;
+  min-width: 250px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-list li:hover .dropdown-menu,
+.nav-list li:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+}
+
+.dropdown-toggle::after {
+  content: ' ▾';
+  font-size: 0.85em;
+  color: var(--color-text-muted);
+  transition: color 0.2s;
+}
+
+.dropdown-toggle:hover::after {
+  color: var(--color-accent);
 }
