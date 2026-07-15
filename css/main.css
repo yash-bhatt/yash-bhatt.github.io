@@ -2596,4 +2596,110 @@ footer .copyright span:last-child::after {
 	background: #000000;
 }
 
+/**
+ * services section - (_layout.scss)
+ * -------------------------------------------------------------------
+ */
+/* keep intro + cards above the dark #services overlay */
+#services .section-intro,
+.services-content {
+	position: relative;
+	z-index: 1;
+}
+.services-content {
+	margin-top: 3.6rem;
+}
+.services-content .service-block {
+	margin-bottom: 3rem;
+	padding: 3rem 3rem 3.6rem;
+	background: #FFFFFF;
+	border-top: 3px solid #cc005f;
+	color: #3E3E3E;
+	-webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+}
+.services-content .service-block h3 {
+	color: #000000;
+	margin-bottom: 1.2rem;
+}
+.services-content .service-promise {
+	font-family: "librebaskerville-italic", serif;
+	font-size: 1.8rem;
+	line-height: 1.5;
+	color: #313131;
+	margin-bottom: 2.1rem;
+}
+.services-content .service-scope {
+	list-style: none;
+	margin: 0 0 2.1rem 0;
+}
+.services-content .service-scope li {
+	position: relative;
+	padding: 0 0 0 2.2rem;
+	margin-bottom: 1rem;
+	line-height: 1.6;
+}
+.services-content .service-scope li:before {
+	content: "\2013";
+	position: absolute;
+	left: 0;
+	color: #cc005f;
+	font-weight: 600;
+}
+.services-content .service-meta,
+.services-content .service-proof {
+	font-size: 1.5rem;
+	line-height: 1.6;
+	color: #6E6E6E;
+	margin-bottom: 1.5rem;
+}
+.services-content .service-proof {
+	padding: 1.5rem 0 0;
+	border-top: 1px solid #E8E8E8;
+}
+.services-content .service-cta-line {
+	font-family: "librebaskerville-italic", serif;
+	font-size: 1.6rem;
+	color: #313131;
+	margin-bottom: 1.2rem;
+}
+.services-content .service-block .button {
+	margin-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.services-content .service-block {
+		padding: 2.4rem 2rem 3rem;
+	}
+	.services-content .service-promise {
+		font-size: 1.6rem;
+	}
+}
+
+/**
+ * hero headline - sized for the full positioning statement,
+ * not the template's original 3-word headline
+ * -------------------------------------------------------------------
+ */
+.intro-content h1 {
+	font-size: 4.2rem !important;
+	line-height: 1.18;
+	max-width: 1000px;
+}
+@media only screen and (max-width: 1024px) {
+	.intro-content h1 {
+		font-size: 3.8rem !important;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.intro-content h1 {
+		font-size: 3.2rem !important;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.intro-content h1 {
+		font-size: 2.6rem !important;
+	}
+}
+
 /*# sourceMappingURL=main.css.map */
