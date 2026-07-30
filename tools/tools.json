@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "note": "Single source of truth for the Tools grid. Add a tool by copying /tools/_template/ to /tools/<slug>/ and appending an object here. status: live | in-build | on-request.",
+  "tools": [
+    {
+      "slug": "parametric-payout-simulator",
+      "name": "Parametric Payout Simulator",
+      "question": "How does the payout curve change as I move the trigger, exhaust, and limit?",
+      "tier": 1,
+      "status": "in-build",
+      "offer": "Parametric Product Design & Pricing",
+      "href": "parametric-payout-simulator/"
+    },
+    {
+      "slug": "burn-cost-aal-explorer",
+      "name": "Burn-Cost / AAL Explorer",
+      "question": "What loss distribution and average annual loss does my peril data imply before I load it?",
+      "tier": 1,
+      "status": "in-build",
+      "offer": "Parametric Product Design & Pricing",
+      "href": "burn-cost-aal-explorer/"
+    },
+    {
+      "slug": "mortality-curve-visualizer",
+      "name": "Mortality-Curve Visualizer",
+      "question": "How different is a law-based fit (Gompertz–Makeham) from a GLM spline on the same data?",
+      "tier": 1,
+      "status": "in-build",
+      "offer": "Reinsurance & Life Pricing",
+      "href": "mortality-curve-visualizer/"
+    },
+    {
+      "slug": "bespoke-demo",
+      "name": "Bespoke Demo On Your Book",
+      "question": "Can I see a working model run on our own data before we engage?",
+      "tier": 3,
+      "status": "on-request",
+      "offer": "Any engagement",
+      "href": "../index.html#contact"
+    }
+  ]
+}
