@@ -7,38 +7,35 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
-    /* Enables standard light/dark modes for browser controls */
-    color-scheme: light dark;
+    color-scheme: light;
   }
 
   body {
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     line-height: var(--line-height-body);
+    letter-spacing: 0.015em;
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    transition: background-color var(--transition-normal), color var(--transition-normal);
+    font-feature-settings: 'ss01' on, 'tnum' on;
   }
 
-  /* Custom Selection styling */
   ::selection {
     background-color: var(--color-accent);
-    color: light-dark(hsl(0, 0%, 100%), hsl(224, 60%, 4%));
+    color: #fff9ee;
   }
 
-  /* Scrollbar Customization */
   body {
-    scrollbar-color: var(--color-text-muted) var(--color-bg-alt);
+    scrollbar-color: var(--color-text-muted) var(--color-bg);
     scrollbar-width: thin;
   }
 
-  /* Focus Management (Accessible and visually clean) */
   :focus {
     outline: none; /* Fallback for legacy browsers */
   }
@@ -48,28 +45,28 @@
     outline-offset: 4px;
   }
 
-  /* Ensure text wrapping handles paragraphs and headlines elegantly */
+  /* Headings whisper: regular weight, tight leading, warm ink */
   h1, h2, h3, h4, h5, h6 {
     margin-block-start: 0;
     margin-block-end: 0;
     font-family: var(--font-heading);
     color: var(--color-text-primary);
     line-height: var(--line-height-heading);
-    font-weight: 700;
-    text-wrap: balance; /* Prevent awkward single-word wraps for headings */
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0.009em;
+    text-wrap: balance;
   }
 
   p {
     margin-block-start: 0;
     margin-block-end: var(--spacing-md);
-    text-wrap: pretty; /* Eliminate orphans in body text paragraphs */
+    text-wrap: pretty;
   }
 
   p:last-child {
     margin-block-end: 0;
   }
 
-  /* Lists resetting */
   ul, ol {
     margin-block-start: 0;
     margin-block-end: 0;
@@ -77,15 +74,14 @@
     list-style: none;
   }
 
-  /* Anchors and buttons */
   a {
-    color: var(--color-accent);
+    color: var(--color-text-primary);
     text-decoration: none;
     transition: color var(--transition-fast), background-color var(--transition-fast);
   }
 
   a:hover {
-    color: var(--color-accent-hover);
+    color: var(--color-accent);
   }
 
   button, input, select, textarea {
@@ -99,21 +95,29 @@
     margin: 0;
   }
 
-  /* Image defaults to prevent layout shifts and cover properly */
   img, svg, video {
     display: block;
     max-inline-size: 100%;
     block-size: auto;
-    aspect-ratio: attr(width) / attr(height);
   }
 
-  /* High Contrast / Forced Colors Mode Fallbacks */
+  /* Content images take the soft 15px radius; heroes stay square via .full-bleed */
+  main img:not(.full-bleed):not(.client-logo-img):not(.tech-icon) {
+    border-radius: var(--radius-xl);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-surface-border);
+    margin-block: var(--spacing-lg);
+  }
+
   @media (forced-colors: active) {
     :focus-visible {
       outline: 2px solid Highlight;
       outline-offset: 4px;
     }
-    
+
     a {
       color: LinkText;
       text-decoration: underline;
@@ -124,7 +128,6 @@
     }
   }
 
-  /* Accessible Offscreen helper (SR-only) */
   .sr-only {
     position: absolute;
     width: 1px;

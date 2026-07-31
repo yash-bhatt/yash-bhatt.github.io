@@ -7,64 +7,50 @@
   <title>Designing and Pricing a Multi-Peril Parametric Product: A Practitioner's Walkthrough | Yash Bhatt | Actuarial Pricing & Analytics Consultant</title>
   
   <!-- CSS Stylesheet Modules -->
-  <link rel="stylesheet" href="../css/variables.css?v=1.4">
-  <link rel="stylesheet" href="../css/base.css?v=1.4">
-  <link rel="stylesheet" href="../css/layout.css?v=1.4">
-  <link rel="stylesheet" href="../css/components.css?v=1.4">
-  <link rel="stylesheet" href="../css/animations.css?v=1.4">
+  <link rel="stylesheet" href="../css/variables.css?v=2.0">
+  <link rel="stylesheet" href="../css/base.css?v=2.0">
+  <link rel="stylesheet" href="../css/layout.css?v=2.0">
+  <link rel="stylesheet" href="../css/components.css?v=2.0">
+  <link rel="stylesheet" href="../css/animations.css?v=2.0">
 </head>
 <body>
 
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-progress-bar" id="progressBar"></div>
-
-  <!-- Header Section -->
+  <!-- Header -->
   <header class="header" id="header">
     <div class="container nav">
       <a href="../index.html#hero" class="logo" aria-label="Yash Bhatt Home">
-        YASH BHATT
+        Yash Bhatt
       </a>
-      
+
       <!-- Desktop Navigation Links -->
       <nav aria-label="Primary Navigation">
         <ul class="nav-list">
-          <li><a href="../index.html#about" class="nav-link">Expertise</a></li>
+          <li><a href="../index.html#profile" class="nav-link">About</a></li>
+          <li><a href="../index.html#about" class="nav-link">Practice</a></li>
           <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
-          <li><a href="../index.html#skills" class="nav-link">Tools</a></li>
           <li class="nav-item dropdown">
-            <a href="../index.html#insights" class="nav-link dropdown-toggle active">Articles</a>
+            <a href="../index.html#insights" class="nav-link dropdown-toggle active">Writing</a>
             <ul class="dropdown-menu">
-              <li><a href="parametric-insurance-climate-risk.html" class="dropdown-item">1. Parametric Climate Risk</a></li>
-              <li><a href="designing-pricing-multi-peril-parametric.html" class="dropdown-item">2. Designing Parametric Products</a></li>
-              <li><a href="predictive-analytics-life-insurance.html" class="dropdown-item">3. Predictive Analytics in Life</a></li>
-              <li><a href="modernizing-actuarial-modeling-vm21.html" class="dropdown-item">4. Modernizing VM-21 Reserving</a></li>
-              <li><a href="billion-record-experience-study-spark.html" class="dropdown-item">5. Billion-Record Study Pipelines</a></li>
+              <li><a href="parametric-insurance-climate-risk.html" class="dropdown-item">Parametric Insurance &amp; Climate Risk</a></li>
+              <li><a href="designing-pricing-multi-peril-parametric.html" class="dropdown-item">Designing Multi-Peril Parametric Products</a></li>
+              <li><a href="mortality-curves-actuarial-laws-glm-splines.html" class="dropdown-item">Mortality Curves You Can Defend</a></li>
+              <li><a href="predictive-analytics-life-insurance.html" class="dropdown-item">Predictive Analytics in Life Insurance</a></li>
+              <li><a href="microinsurance-vietnam-remittance.html" class="dropdown-item">Micro-Insurance at Remittance Scale</a></li>
+              <li><a href="modernizing-actuarial-modeling-vm21.html" class="dropdown-item">Moving VM-21 to Databricks</a></li>
+              <li><a href="billion-record-experience-study-spark.html" class="dropdown-item">Billion-Record Study Pipelines</a></li>
+              <li><a href="model-governance-platform-migration.html" class="dropdown-item">Model Risk in Platform Migration</a></li>
             </ul>
           </li>
-          <li><a href="../index.html#contact" class="nav-link btn btn-secondary">Get in Touch</a></li>
+          <li><a href="../tools/index.html" class="nav-link">Tools</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Theme Toggle & Hamburger -->
-      <div class="flex-center" style="gap: var(--spacing-md);">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" style="cursor: pointer; padding: var(--spacing-xs); display: flex; align-items: center; border-radius: var(--radius-sm); border: 1px solid var(--color-surface-border);">
-          <!-- Sun Icon (shows in dark theme) -->
-          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--sun-display, block); color: var(--color-text-primary);">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <!-- Moon Icon (shows in light theme) -->
-          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--moon-display, none); color: var(--color-text-primary);">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <span class="menu-btn-bar"></span>
-          <span class="menu-btn-bar"></span>
-          <span class="menu-btn-bar"></span>
-        </button>
-      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
     </div>
   </header>
 
@@ -72,10 +58,11 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav aria-label="Mobile Navigation">
       <ul class="mobile-nav-list">
-        <li><a href="../index.html#about" class="mobile-nav-link">Expertise</a></li>
+        <li><a href="../index.html#profile" class="mobile-nav-link">About</a></li>
+        <li><a href="../index.html#about" class="mobile-nav-link">Practice</a></li>
         <li><a href="../index.html#experience" class="mobile-nav-link">Experience</a></li>
-        <li><a href="../index.html#skills" class="mobile-nav-link">Tools</a></li>
-        <li><a href="../index.html#insights" class="mobile-nav-link">Articles</a></li>
+        <li><a href="../index.html#insights" class="mobile-nav-link">Writing</a></li>
+        <li><a href="../tools/index.html" class="mobile-nav-link">Tools</a></li>
         <li><a href="../index.html#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -84,32 +71,17 @@
   <main style="padding-top: calc(var(--header-height) + var(--spacing-xl)); padding-bottom: var(--spacing-xxl);">
     <article class="container-narrow">
       
-      <!-- Back Link and Dropdown Navigation Selector -->
-      <div style="margin-bottom: var(--spacing-lg); display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center;">
-        <a href="../index.html#insights" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: var(--spacing-xs) var(--spacing-md); font-size: var(--font-size-xs); line-height: 1; margin: 0;">
-          &larr; Back to Articles
-        </a>
-        <div style="position: relative; display: inline-block;">
-          <select onchange="if(this.value) window.location.href=this.value" style="background-color: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-surface-border); padding: 8px 32px 8px 12px; border-radius: var(--radius-sm); font-size: var(--font-size-xs); cursor: pointer; appearance: none; -webkit-appearance: none; font-weight: 500; min-width: 250px; outline: none; transition: border-color 0.2s;">
-            <option value="" disabled>Select an article to read...</option>
-            <option value="parametric-insurance-climate-risk.html" >1. Parametric Insurance & Climate Risk</option>
-            <option value="designing-pricing-multi-peril-parametric.html" selected>2. Designing & Pricing Parametric Products</option>
-            <option value="predictive-analytics-life-insurance.html" >3. Predictive Analytics in Life Insurance</option>
-            <option value="modernizing-actuarial-modeling-vm21.html" >4. Modernizing Actuarial Modeling (VM-21)</option>
-            <option value="billion-record-experience-study-spark.html" >5. Billion-Record Experience Study Pipelines</option>
-          </select>
-          <div style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-text-muted); font-size: 10px;">
-            ▼
-          </div>
-        </div>
+      <!-- Back to index -->
+      <div style="margin-bottom: var(--spacing-lg);">
+        <a href="../index.html#insights" class="btn btn-link">&larr; All writing</a>
       </div>
 
       <!-- Article Header -->
       <header style="margin-bottom: var(--spacing-xl);">
-        <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.08em; background-color: var(--color-accent-subtle); padding: 4px 8px; border-radius: 4px;">
+        <span class="section-label" style="color: var(--color-text-muted); margin-bottom: 0;">
           Parametric Climate
         </span>
-        <h1 style="font-size: var(--font-size-xl); margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); line-height: 1.2; font-family: var(--font-heading); font-weight: 800; color: var(--color-text-primary);">
+        <h1 style="font-size: var(--font-size-xl); margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); line-height: 1.2; font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">
           Designing and Pricing a Multi-Peril Parametric Product: A Practitioner's Walkthrough
         </h1>
         <div style="color: var(--color-text-muted); font-size: var(--font-size-xs); display: flex; gap: var(--spacing-md); align-items: center;">
@@ -126,19 +98,19 @@
         
 <p>Designing a parametric product looks deceptively simple from the outside: pick a trigger, set a payout, collect premium. In practice, getting it right across multiple perils is one of the more demanding pieces of actuarial work I've done. Let me walk you through how I approached building and pricing a multi-peril parametric cover for Southeast Asia — spanning heat, rain, storm and thunder, flood, and pollution — and the decisions that actually matter.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Step 1: Define the trigger</h2>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Step 1: Define the trigger</h2>
 
 <p>Everything starts with the trigger. For each peril you need an index that is objective, independently measurable, and — critically — well correlated with the actual loss the client suffers: rainfall in millimeters over a window, wind speed, a temperature threshold, an air-quality index for pollution.</p>
 
 <p>The tension is always between correlation and availability. The index that best matches losses may rely on data that isn't reliable or granular enough; the index with the cleanest data may not track losses well. You resolve this by testing candidate indices against historical loss experience and picking the structure that minimizes basis risk without becoming unmeasurable. As Milliman puts it, the better the correlation between trigger and actual loss, the lower the likelihood of basis risk — which is why careful trigger selection and location-specific data are the whole game. With multiple perils you also have to decide whether triggers operate independently, in tiers, or in combination. A storm that brings both extreme wind and extreme rain shouldn't double-count or, worse, fall through a definitional gap.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Step 2: Structure the payout</h2>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Step 2: Structure the payout</h2>
 
 <p>Once the trigger is defined, you design the payout. The classic choices are a binary payout (trigger breached, fixed sum paid), a stepped/tiered structure (progressively larger payouts as the index climbs through bands), or a linear/continuous payout scaled to the index value.</p>
 
 <p>Tiered and linear structures generally reduce basis risk because the payout tracks severity more closely, but they're more complex to communicate and price. Binary triggers are simple and transparent but blunt. For a multi-peril product I lean toward stepped payouts, with attachment points and limits calibrated to the return-period losses of each peril.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Step 3: Burn cost and AAL</h2>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Step 3: Burn cost and AAL</h2>
 
 <p>Now the pricing. I anchor on two complementary views:</p>
 
@@ -155,17 +127,17 @@
 
 <p>Burn cost tells you what history says; AAL tells you what the full distribution says. When they diverge, that divergence is itself information — often a sign that the historical window is too short to capture tail events, which matters enormously for climate perils where the tail is getting fatter. The financial translation has to be auditable: an insurer setting a premium needs to see the whole chain from physical threshold to damage percentage to monetary loss.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Step 4: Stress testing and loadings</h2>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Step 4: Stress testing and loadings</h2>
 
 <p>Historical burn cost is necessary but not sufficient, because climate risk is non-stationary — the past systematically understates the future. So I build Python-based prototypes to test product performance under both historical and stressed climate scenarios. Shift the rainfall distribution, increase storm frequency, warm the temperature baseline, and watch what happens to projected payouts.</p>
 
 <p>This is what supports a genuine go-to-market decision. It tells you whether the product is solvent under plausible adverse futures, not just in an average year — a live concern when WTW's 2026 Natural Catastrophe Review found that flood-related losses in Southeast Asia may grow as much as tenfold in the coming years. On top of the pure risk cost, you then layer loadings — for expenses, for the cost of capital, for uncertainty and basis risk, and for profit — to arrive at a commercial premium. The heavier the tail and the thinner the data, the larger the uncertainty loading needs to be.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Step 5: Document it properly</h2>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Step 5: Document it properly</h2>
 
 <p>The final, underrated step is drafting the policy documents and payout terms and conditions. In parametric insurance the wording is the product — the contract defines the exact index source, the measurement methodology, the trigger thresholds, and the settlement mechanism. Ambiguity here is where disputes are born. Getting the T&Cs precise and unambiguous is as important as getting the price right.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">The through-line</h2>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">The through-line</h2>
 
 <p>Every one of these steps circles back to basis risk. Trigger choice, payout shape, data granularity, stress testing — they're all levers to make the payout track the real loss more closely. Research on weather parametric portfolios shows that diversifying across independent contracts materially reduces aggregate basis risk, which is another reason a well-constructed multi-peril book can be more robust than the sum of its parts. A parametric product that pays reliably when the client hurts earns renewals; one that misses builds resentment and churns.</p>
 
@@ -189,15 +161,15 @@
       
       <!-- Read More Navigation -->
       <div style="margin-top: var(--spacing-xxl);">
-        <h4 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-md); font-family: var(--font-heading); font-weight: 700; border-bottom: 2px solid var(--color-surface-border); padding-bottom: 8px; color: var(--color-text-primary);">
+        <h4 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-md); font-family: var(--font-heading); font-weight: 700; border-bottom: 1px solid var(--color-surface-border); padding-bottom: 8px; color: var(--color-text-primary);">
           Other Featured Insights
         </h4>
         <div class="grid grid-2" style="gap: var(--spacing-md);">
           
           <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
             <div>
-              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Parametric Climate</span>
-              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk in Emerging Markets</h5>
+              <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Parametric Climate</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk in Emerging Markets</h5>
             </div>
             <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
               <span>May 2026</span>
@@ -207,8 +179,8 @@
         
           <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
             <div>
-              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Reinsurance Pricing</span>
-              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning</h5>
+              <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Reinsurance Pricing</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning</h5>
             </div>
             <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
               <span>May 2026</span>
@@ -218,8 +190,8 @@
         
           <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
             <div>
-              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
-              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Modernizing Actuarial Modeling: Moving VM-21 and Statutory Calculations Off Excel and Onto Databricks</h5>
+              <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Modernizing Actuarial Modeling: Moving VM-21 and Statutory Calculations Off Excel and Onto Databricks</h5>
             </div>
             <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
               <span>May 2026</span>
@@ -229,8 +201,8 @@
         
           <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
             <div>
-              <span style="color: var(--color-accent); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
-              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 700; color: var(--color-text-primary);">Building Billion-Record Experience-Study Pipelines with Delta Lake, Spark, and MLflow</h5>
+              <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
+              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Building Billion-Record Experience-Study Pipelines with Delta Lake, Spark, and MLflow</h5>
             </div>
             <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
               <span>May 2026</span>
@@ -244,35 +216,36 @@
     </article>
   </main>
 
-  <!-- Footer Section -->
+    <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid grid">
       <div class="footer-brand">
-        <a href="../index.html#hero" class="logo" style="font-size: var(--font-size-md);">
-          YASH BHATT
+        <a href="../index.html#hero" class="logo">
+          Yash Bhatt
         </a>
         <p class="footer-brand-text">
-          Independent Pricing & Product Development Consultant. Associate of the Institute of Actuaries.
+          Independent pricing &amp; product development consultant. Associate of the Institute and Faculty of Actuaries.
         </p>
       </div>
 
       <div>
-        <h3 class="footer-links-title">Quick Links</h3>
+        <h3 class="footer-links-title">Site</h3>
         <ul class="footer-links-list">
-          <li><a href="../index.html#about" class="footer-link">Expertise Capabilities</a></li>
-          <li><a href="../index.html#experience" class="footer-link">Experience Timeline</a></li>
-          <li><a href="../index.html#skills" class="footer-link">Tools & Tech</a></li>
-          <li><a href="../index.html#insights" class="footer-link">Insights</a></li>
+          <li><a href="../index.html#profile" class="footer-link">About</a></li>
+          <li><a href="../index.html#about" class="footer-link">Practice areas</a></li>
+          <li><a href="../index.html#experience" class="footer-link">Experience</a></li>
+          <li><a href="../index.html#insights" class="footer-link">Writing</a></li>
+          <li><a href="../tools/index.html" class="footer-link">Interactive tools</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="footer-links-title">Professional Profiles</h3>
+        <h3 class="footer-links-title">Elsewhere</h3>
         <ul class="footer-links-list">
-          <li><a href="https://linkedin.com/in/yashbhatt28" class="footer-link" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><a href="https://github.com/yash-bhatt" class="footer-link" target="_blank" rel="noopener">GitHub Profile</a></li>
-          <li><a href="mailto:b.yash289@gmail.com" class="footer-link">Email Direct</a></li>
-          <li><a href="tel:+919968112775" class="footer-link">Call +91 996-811-2775</a></li>
+          <li><a href="https://linkedin.com/in/yashbhatt28" class="footer-link" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/yash-bhatt" class="footer-link" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="mailto:b.yash289@gmail.com" class="footer-link">b.yash289@gmail.com</a></li>
+          <li><a href="tel:+919968112775" class="footer-link">+91 996-811-2775</a></li>
         </ul>
       </div>
     </div>
@@ -284,7 +257,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../js/main.js?v=1.4"></script>
-  <script src="../js/scroll-effects.js?v=1.4"></script>
+  <script src="../js/main.js?v=2.0"></script>
+  <script src="../js/scroll-effects.js?v=2.0"></script>
 </body>
 </html>

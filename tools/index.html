@@ -7,55 +7,38 @@
   <title>Tools — Interactive Actuarial Demos | Yash Bhatt</title>
 
   <!-- CSS Stylesheet Modules -->
-  <link rel="stylesheet" href="../css/variables.css?v=1.4">
-  <link rel="stylesheet" href="../css/base.css?v=1.4">
-  <link rel="stylesheet" href="../css/layout.css?v=1.4">
-  <link rel="stylesheet" href="../css/components.css?v=1.4">
-  <link rel="stylesheet" href="../css/animations.css?v=1.4">
-  <link rel="stylesheet" href="../css/tools.css?v=1.0">
+  <link rel="stylesheet" href="../css/variables.css?v=2.0">
+  <link rel="stylesheet" href="../css/base.css?v=2.0">
+  <link rel="stylesheet" href="../css/layout.css?v=2.0">
+  <link rel="stylesheet" href="../css/components.css?v=2.0">
+  <link rel="stylesheet" href="../css/animations.css?v=2.0">
+  <link rel="stylesheet" href="../css/tools.css?v=2.0">
 </head>
 <body>
 
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-progress-bar" id="progressBar"></div>
-
-  <!-- Header Section -->
+  <!-- Header -->
   <header class="header" id="header">
     <div class="container nav">
       <a href="../index.html#hero" class="logo" aria-label="Yash Bhatt Home">
-        YASH BHATT
+        Yash Bhatt
       </a>
 
-      <!-- Desktop Navigation Links -->
       <nav aria-label="Primary Navigation">
         <ul class="nav-list">
-          <li><a href="../index.html#about" class="nav-link">Expertise</a></li>
+          <li><a href="../index.html#profile" class="nav-link">About</a></li>
+          <li><a href="../index.html#about" class="nav-link">Practice</a></li>
           <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
-          <li><a href="../index.html#skills" class="nav-link">Stack</a></li>
-          <li><a href="../index.html#insights" class="nav-link">Articles</a></li>
+          <li><a href="../index.html#insights" class="nav-link">Writing</a></li>
           <li><a href="index.html" class="nav-link active">Tools</a></li>
-          <li><a href="../index.html#contact" class="nav-link btn btn-secondary">Get in Touch</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Theme Toggle & Hamburger -->
-      <div class="flex-center" style="gap: var(--spacing-md);">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" style="cursor: pointer; padding: var(--spacing-xs); display: flex; align-items: center; border-radius: var(--radius-sm); border: 1px solid var(--color-surface-border);">
-          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--sun-display, block); color: var(--color-text-primary);">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--moon-display, none); color: var(--color-text-primary);">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <span class="menu-btn-bar"></span>
-          <span class="menu-btn-bar"></span>
-          <span class="menu-btn-bar"></span>
-        </button>
-      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
     </div>
   </header>
 
@@ -63,21 +46,21 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav aria-label="Mobile Navigation">
       <ul class="mobile-nav-list">
-        <li><a href="../index.html#about" class="mobile-nav-link">Expertise</a></li>
+        <li><a href="../index.html#profile" class="mobile-nav-link">About</a></li>
+        <li><a href="../index.html#about" class="mobile-nav-link">Practice</a></li>
         <li><a href="../index.html#experience" class="mobile-nav-link">Experience</a></li>
-        <li><a href="../index.html#skills" class="mobile-nav-link">Stack</a></li>
-        <li><a href="../index.html#insights" class="mobile-nav-link">Articles</a></li>
+        <li><a href="../index.html#insights" class="mobile-nav-link">Writing</a></li>
         <li><a href="index.html" class="mobile-nav-link">Tools</a></li>
         <li><a href="../index.html#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
     </nav>
   </div>
 
-  <main>
+  <main style="padding-top: var(--header-height);">
     <section class="section" id="tools">
       <div class="container">
         <div style="max-width: 720px; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Interactive demos</span>
+          <span class="section-label">Interactive demos</span>
           <h1 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Tools you can run in your browser</h1>
           <p style="color: var(--color-text-secondary);">
             Small actuarial calculators that answer one question each. They run client-side —
@@ -139,8 +122,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../js/main.js?v=1.4"></script>
-  <script src="../js/scroll-effects.js?v=1.4"></script>
+  <script src="../js/main.js?v=2.0"></script>
+  <script src="../js/scroll-effects.js?v=2.0"></script>
   <script src="tools.js?v=1.0"></script>
 </body>
 </html>

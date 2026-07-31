@@ -1,93 +1,109 @@
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+/* Inter stands in for Neue Haas Grotesk (see DESIGN_consulting.md) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Color Scheme Configuration */
-    color-scheme: light dark;
+    /* Light-only editorial system — warm cream canvas, bark-brown ink */
+    color-scheme: light;
 
-    /* Base Colors - Defined per mode dynamically using light-dark() */
-    --color-bg: light-dark(hsl(210, 40%, 98%), hsl(224, 60%, 4%));
-    --color-bg-alt: light-dark(hsl(210, 30%, 95%), hsl(224, 45%, 8%));
-    --color-surface: light-dark(hsl(0, 0%, 100%), hsl(222, 35%, 11%));
-    --color-surface-hover: light-dark(hsl(210, 20%, 96%), hsl(222, 30%, 15%));
-    --color-surface-border: light-dark(hsla(222, 47%, 11%, 0.08), hsla(210, 40%, 98%, 0.08));
-    --color-surface-border-hover: light-dark(hsla(222, 47%, 11%, 0.15), hsla(210, 40%, 98%, 0.18));
-    
-    /* Hero Gradient Overlay Colors */
-    --color-overlay-start: light-dark(rgba(240, 244, 248, 0.95), rgba(11, 19, 43, 0.95));
-    --color-overlay-mid: light-dark(rgba(240, 244, 248, 0.85), rgba(11, 19, 43, 0.85));
-    --color-overlay-end: light-dark(rgba(240, 244, 248, 0.3), rgba(11, 19, 43, 0.3));
+    /* Canvas & surfaces */
+    --color-bg: #fff9ee;                 /* Cream Parchment — page canvas */
+    --color-bg-alt: #fff9ee;             /* no alternating bands; body stays cream */
+    --color-surface: #fff9ee;            /* cards sit on cream, separated by hairlines */
+    --color-surface-elevated: #ffffff;   /* Paper White — elevated panels */
+    --color-surface-hover: #fdf3de;
+    --color-surface-border: #c5bdb3;     /* Stone — hairlines */
+    --color-surface-border-hover: #3f322a;
 
-    /* Text Colors */
-    --color-text-primary: light-dark(hsl(222, 47%, 12%), hsl(210, 40%, 98%));
-    --color-text-secondary: light-dark(hsl(215, 16%, 38%), hsl(215, 20%, 75%));
-    --color-text-muted: light-dark(hsl(215, 12%, 52%), hsl(215, 14%, 55%));
+    /* Hero overlay — protects white text over photography */
+    --color-overlay-start: rgba(34, 27, 21, 0.62);
+    --color-overlay-mid: rgba(34, 27, 21, 0.28);
+    --color-overlay-end: rgba(34, 27, 21, 0.05);
 
-    /* Brand / Accent Colors */
-    --color-accent: light-dark(hsl(215, 95%, 45%), hsl(195, 100%, 45%));
-    --color-accent-hover: light-dark(hsl(215, 95%, 38%), hsl(195, 100%, 55%));
-    --color-accent-subtle: light-dark(hsla(215, 95%, 45%, 0.06), hsla(195, 100%, 45%, 0.08));
-    --color-accent-glow: light-dark(hsla(215, 95%, 45%, 0.12), hsla(195, 100%, 45%, 0.25));
+    /* Ink */
+    --color-text-primary: #3f322a;       /* Bark Brown — replaces black */
+    --color-text-secondary: #796e65;     /* Earth */
+    --color-text-muted: #9f968c;         /* Warm Gray */
 
-    /* Success / Alerts */
-    --color-success: light-dark(hsl(142, 70%, 35%), hsl(142, 72%, 40%));
-    --color-success-bg: light-dark(hsl(142, 70%, 95%), hsl(142, 72%, 10%));
-    --color-error: light-dark(hsl(0, 80%, 45%), hsl(0, 84%, 60%));
+    /* Single chromatic action color */
+    --color-accent: #004e4e;             /* Deep Teal */
+    --color-accent-hover: #003a3a;
+    --color-accent-subtle: rgba(0, 78, 78, 0.06);
+    --color-accent-glow: transparent;
 
-    /* Typography Hierarchy */
-    --font-heading: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* Editorial accent strokes (borders only, never fills) */
+    --color-accent-aubergine: #560e4b;
+    --color-accent-iris: #a56eff;
+    --color-accent-cobalt: #3074f9;
+    --color-accent-ice: #bfebfe;
 
-    /* Responsive Font Sizes using clamp() */
-    --font-size-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
-    --font-size-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
-    --font-size-base: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
-    --font-size-md: clamp(1.1rem, 1rem + 0.4vw, 1.25rem);
-    --font-size-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-    --font-size-xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.85rem);
-    --font-size-xxl: clamp(2rem, 1.75rem + 1vw, 2.75rem);
-    --font-size-display: clamp(2.5rem, 2rem + 2.5vw, 4.5rem);
+    /* Feedback */
+    --color-success: #004e4e;
+    --color-success-bg: rgba(0, 78, 78, 0.06);
+    --color-error: #99321f;
 
-    /* Line Heights */
-    --line-height-heading: 1.15;
-    --line-height-body: 1.6;
+    /* Typography — one grotesque carries the whole interface */
+    --font-heading: 'Inter', 'Helvetica Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', 'Helvetica Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Type scale — tight editorial register (12 / 14 / 16 / 22 / 24 / 30 / 43 / 68) */
+    --font-size-xs: 0.75rem;                                   /* 12px — labels, captions */
+    --font-size-sm: 0.875rem;                                  /* 14px — body */
+    --font-size-base: 1rem;                                    /* 16px — editorial body */
+    --font-size-md: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);   /* 18–22px */
+    --font-size-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);    /* 20–24px */
+    --font-size-xl: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);   /* 24–30px */
+    --font-size-xxl: clamp(1.75rem, 1.35rem + 1.7vw, 2.6875rem); /* 28–43px */
+    --font-size-display: clamp(2.25rem, 1.6rem + 3.2vw, 4.25rem); /* 36–68px */
+
+    /* Line heights */
+    --line-height-heading: 1.09;
+    --line-height-body: 1.5;
     --line-height-code: 1.5;
 
-    /* Spacing System (fluid) */
-    --spacing-xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.35rem);
-    --spacing-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
-    --spacing-md: clamp(1rem, 0.85rem + 0.5vw, 1.25rem);
-    --spacing-lg: clamp(1.5rem, 1.35rem + 0.8vw, 2rem);
-    --spacing-xl: clamp(2.5rem, 2.2rem + 1.2vw, 3.5rem);
-    --spacing-xxl: clamp(4rem, 3.5rem + 2.5vw, 6.5rem);
-    --section-padding: clamp(3.5rem, 5vw + 1.5rem, 7.5rem);
+    /* Tracking */
+    --tracking-label: 0.017em;
+    --tracking-wordmark: 0.09em;
 
-    /* Borders & Radius */
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-xl: 32px;
+    /* Weights — 400 whispers, 700 is reserved for labels and wordmarks */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing (base unit 4px) */
+    --spacing-xs: 0.25rem;    /* 4px */
+    --spacing-sm: 0.75rem;    /* 12px */
+    --spacing-md: 1.25rem;    /* 20px */
+    --spacing-lg: 2.5rem;     /* 40px */
+    --spacing-xl: clamp(2.5rem, 2rem + 2vw, 4rem);
+    --spacing-xxl: clamp(4rem, 3rem + 3vw, 5rem);   /* 80px cap */
+    --section-padding: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+
+    /* Radii — 2px editorial edge; 15px reserved for imagery */
+    --radius-sm: 2px;
+    --radius-md: 2px;
+    --radius-lg: 2px;
+    --radius-xl: 15px;
     --radius-round: 9999px;
 
-    /* Soft Premium Shadows (Layered for realism) */
-    --shadow-sm: 0 2px 4px light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.15));
-    --shadow-md: 0 4px 10px light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.2)),
-                 0 1px 3px light-dark(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.1));
-    --shadow-lg: 0 10px 25px -5px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.35)),
-                 0 8px 12px -6px light-dark(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.15));
-    --shadow-inset: inset 0 1px 2px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.03));
-    --shadow-accent-glow: 0 0 20px -5px var(--color-accent-glow);
+    /* Elevation is achieved with hairlines, never shadows */
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-inset: none;
+    --shadow-accent-glow: none;
 
-    /* Durations & Easings */
+    /* Durations & easings */
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-bounce: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Page Constraints */
-    --max-width-content: 1200px;
+    /* Page constraints */
+    --max-width-content: 1280px;
     --max-width-narrow: 800px;
-    --header-height: 80px;
+    --max-width-prose: 680px;
+    --header-height: 56px;
   }
 }
