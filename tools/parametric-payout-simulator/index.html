@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parametric Payout Simulator — see how the payout curve changes as you move the trigger, exhaust, and limit. An interactive actuarial tool by Yash Bhatt.">
+  <title>Parametric Payout Simulator — Actuarial Tool | Yash Bhatt</title>
+
+  <link rel="stylesheet" href="../../css/variables.css?v=2.0">
+  <link rel="stylesheet" href="../../css/base.css?v=2.0">
+  <link rel="stylesheet" href="../../css/layout.css?v=2.0">
+  <link rel="stylesheet" href="../../css/components.css?v=2.0">
+  <link rel="stylesheet" href="../../css/animations.css?v=2.0">
+  <link rel="stylesheet" href="../../css/tools.css?v=2.0">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="../../index.html#hero" class="logo" aria-label="Yash Bhatt Home">
+        Yash Bhatt
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="../../index.html#profile" class="nav-link">About</a></li>
+          <li><a href="../../index.html#about" class="nav-link">Practice</a></li>
+          <li><a href="../../index.html#experience" class="nav-link">Experience</a></li>
+          <li><a href="../../index.html#insights" class="nav-link">Writing</a></li>
+          <li><a href="../index.html" class="nav-link active">Tools</a></li>
+          <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="../../index.html#profile" class="mobile-nav-link">About</a></li>
+        <li><a href="../../index.html#about" class="mobile-nav-link">Practice</a></li>
+        <li><a href="../../index.html#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="../../index.html#insights" class="mobile-nav-link">Writing</a></li>
+        <li><a href="../index.html" class="mobile-nav-link">Tools</a></li>
+        <li><a href="../../index.html#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main style="padding-top: var(--header-height);">
+    <section class="section">
+      <div class="container">
+        <p style="margin-bottom: var(--spacing-md);"><a href="../index.html" class="btn-link">← All tools</a></p>
+
+        <div class="tool-hero">
+          <span class="tool-status tool-status--in-build tool-hero-status">In build</span>
+          <h1 style="font-size: var(--font-size-xl);">Parametric Payout Simulator</h1>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-size-md);">How does the payout curve change as you move the trigger, exhaust, and limit?</p>
+        </div>
+
+        <div id="tool-root">
+          This tool is in build. Want early access or a run tuned to your product structure?
+          <a href="../../index.html#contact" class="btn-link">Request a demo →</a>
+        </div>
+
+        <div class="tool-spec">
+          <h2>Build spec</h2>
+          <dl>
+            <dt>Tier</dt><dd>1 — client-side, no backend.</dd>
+            <dt>Inputs</dt><dd>Sliders for trigger, exhaust, limit; dropdown for payout shape (linear / stepped).</dd>
+            <dt>Compute</dt><dd>payout(index) = clamp((index − trigger) / (exhaust − trigger), 0, 1) × limit.</dd>
+            <dt>Output</dt><dd>Live SVG/Canvas payout curve plus a readout table at sample index levels.</dd>
+            <dt>Done when</dt><dd>Moving any slider updates the curve in real time, with no network calls.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>&copy; <span id="currentYear">2026</span> Yash Bhatt Actuarial Analytics.</p>
+      <p><a href="../index.html" class="footer-link">All tools</a> · Associate of the Institute and Faculty of Actuaries (AIA)</p>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js?v=2.0"></script>
+  <script src="../../js/scroll-effects.js?v=2.0"></script>
+  <script src="tool.js?v=1.0"></script>
+</body>
+</html>

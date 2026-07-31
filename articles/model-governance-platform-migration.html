@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning - Yash Bhatt Insights">
-  <title>Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning | Yash Bhatt | Actuarial Pricing & Analytics Consultant</title>
-  
+  <meta name="description" content="Migrating actuarial models between platforms is a model-risk event. Parallel runs, reconciliation hierarchies, and the governance that survives the move - Yash Bhatt">
+  <title>Model Risk in the Migration: Governance When Models Change Platforms | Yash Bhatt</title>
+
   <!-- CSS Stylesheet Modules -->
   <link rel="stylesheet" href="../css/variables.css?v=2.0">
   <link rel="stylesheet" href="../css/base.css?v=2.0">
@@ -70,7 +70,7 @@
 
   <main style="padding-top: calc(var(--header-height) + var(--spacing-xl)); padding-bottom: var(--spacing-xxl);">
     <article class="container-narrow">
-      
+
       <!-- Back to index -->
       <div style="margin-bottom: var(--spacing-lg);">
         <a href="../index.html#insights" class="btn btn-link">&larr; All writing</a>
@@ -79,62 +79,77 @@
       <!-- Article Header -->
       <header style="margin-bottom: var(--spacing-xl);">
         <span class="section-label" style="color: var(--color-text-muted); margin-bottom: 0;">
-          Reinsurance Pricing
+          Model Governance
         </span>
         <h1 style="font-size: var(--font-size-xl); margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); line-height: 1.2; font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">
-          Predictive Analytics in Life Insurance: From Mortality Curves to Machine Learning
+          Model Risk in the Migration: Governance When Models Change Platforms
         </h1>
         <div style="color: var(--color-text-muted); font-size: var(--font-size-xs); display: flex; gap: var(--spacing-md); align-items: center;">
-          <span>Published May 2026</span>
-          <span>•</span>
+          <span>Published July 2026</span>
+          <span>&middot;</span>
           <span>6 min read</span>
-          <span>•</span>
+          <span>&middot;</span>
           <span>By Yash Bhatt</span>
         </div>
       </header>
 
       <!-- Article Content -->
       <div class="article-body" style="color: var(--color-text-secondary); line-height: var(--line-height-body); font-size: var(--font-size-base);">
-        
-<p>Life insurance has always been a data business. What's changed over the last several years is the sophistication of what we can do with that data — and the speed at which the discipline is moving from static, table-driven assumptions to dynamic, model-driven insight. I've worked across this spectrum: building mortality curves with classical actuarial techniques, and building machine-learning models to flag high-risk lives and decode policyholder behavior. Here's how I see the state of play.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Mortality: the foundation still matters</h2>
+<p>Every actuarial platform migration is sold on speed and cost. Excel to Databricks, single-thread R to Spark, one vendor valuation system to another — the business case is always faster runs and lower spend. Those benefits are real; I've delivered them. But the sentence that should open every migration plan is different: <strong>a migration is a model-risk event.</strong> The moment a calculation moves platforms, you have two implementations of the same model, and any disagreement between them is a defect in at least one — you just don't know which.</p>
 
-<p>Everything in life insurance rests on the mortality assumption, and building a credible mortality basis is still core actuarial craft. I've built and calibrated mortality curves using actuarial laws and GLM spline models, and analyzed mortality improvement using industry (IIB) and census data.</p>
+<p>I've lived this from several seats: building a VM-21 engine on Databricks/PySpark to replace legacy Excel runs, with a formal assessment of model appropriateness and limitations; migrating single-thread R experience-study code to sparkR/sparklyr pipelines; and working alongside the MG-ALFA and Milliman Integrate teams on an actuarial model transition. The technology differed each time. The governance questions did not.</p>
 
-<p>The reason splines and GLMs remain central is that raw experience data is noisy, especially at older ages where exposure is thin. Graduation techniques — Whittaker graduation, cubic and penalized splines — smooth that noise into a stable, usable curve without over-fitting. (The CMI itself has long used Whittaker graduation for pensioner and annuitant rates.) A GLM framework lets you layer in explanatory factors while keeping the model interpretable and defensible to regulators.</p>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Separate what you're moving from what you're changing</h2>
 
-<p>Mortality improvement is where this gets genuinely hard right now. The post-pandemic picture is messy. According to the CMI, 2025 death rates in England and Wales were nearly 2% lower than 2024 — itself the previous record low — extending five consecutive years of decline. But as CMI Chair Cobus Daneel noted, "the only exception was men aged 45-64, whose death rates remained concerningly above pre-pandemic levels for the sixth consecutive year." In the US, Group Life mortality has largely returned to pre-pandemic benefit ratios. The signal is diverging by age and cause, and setting a single improvement assumption on top of that requires judgment, not just extrapolation — a challenge that recent actuarial research has tackled by pairing classical Lee-Carter baselines with GAM and XGBoost layers to capture non-linear drivers.</p>
+<p>The single most valuable act of discipline is to split the migration into two ledgers. One ledger holds things that must not change: assumptions, methodology, the economic result. The other holds the things you are deliberately changing: the compute engine, data storage, orchestration, run frequency. Every observed difference between old and new gets charged to one ledger or the other, in writing.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Where machine learning earns its place</h2>
+<p>Without this split, migrations drift into a dangerous habit: "while we're in here, let's also fix the lapse assumption." Now the parallel run can't isolate anything — implementation differences and assumption changes are confounded, and sign-off becomes a judgment call dressed as a reconciliation. Freeze the model, move it, prove equivalence, and only then change it. Assumption updates deserve their own governance cycle on the new platform.</p>
 
-<p>Layered on top of that classical foundation, machine learning adds real value in specific, well-defined places. On a reinsurance pricing engagement with RGA, I used predictive models — linear regression, logistic regression, and XGBoost — to assess risk relativities and flag high-risk lives.</p>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">The reconciliation hierarchy</h2>
 
-<p>The point of using something like XGBoost isn't novelty; it's that gradient-boosted trees capture non-linear interactions between risk factors that a linear model misses. In mortality and morbidity work, models are increasingly used behind the scenes to generate risk scores that guide triage — deciding which cases can be fast-tracked and which need fuller evidence. That's exactly the direction the reinsurance market is heading: per its 2024 Annual Review, RGA's Individual Life team reviewed a record 120,000 facultative cases, and its MedScore tool "combines the predictive power of prescription drug and digital health data in a single risk assessment score for group insurers."</p>
+<p>"The totals match" is where reconciliation starts, not where it ends. Aggregate agreement can hide large offsetting errors — I have seen a portfolio-level reserve agree to four significant figures while two product cohorts were each wrong by material amounts in opposite directions. The hierarchy that actually earns sign-off runs in the other direction:</p>
 
-<p>The pattern I follow is to use the interpretable model (logistic/linear GLM) as the workhorse for anything that needs regulatory defensibility, and the machine-learning model (XGBoost) where predictive lift matters more than transparency — with careful validation using AUC, calibration plots, and out-of-sample testing.</p>
+<ul style="list-style-type: none; padding-left: 0; margin-bottom: var(--spacing-lg);">
+  <li style="margin-bottom: var(--spacing-md); position: relative; padding-left: 24px;">
+    <span style="position: absolute; left: 0; color: var(--color-accent); font-weight: bold;">&#8212;</span>
+    <strong>Seriatim first.</strong> Policy-level comparison across the full book, not a sample. On Spark this is cheap — comparing a billion rows is exactly what the platform is for. The distribution of per-policy differences tells you more than any total: a tight cluster at zero with a small tail of outliers points to edge-case logic; a small uniform drift points to a rounding or day-count convention.
+  </li>
+  <li style="margin-bottom: var(--spacing-md); position: relative; padding-left: 24px;">
+    <span style="position: absolute; left: 0; color: var(--color-accent); font-weight: bold;">&#8212;</span>
+    <strong>Cohort second.</strong> Roll differences up by product, issue year, fund, and any dimension management reports on. This is where offsetting errors surface.
+  </li>
+  <li style="margin-bottom: var(--spacing-md); position: relative; padding-left: 24px;">
+    <span style="position: absolute; left: 0; color: var(--color-accent); font-weight: bold;">&#8212;</span>
+    <strong>Aggregate last, with stated tolerances.</strong> Tolerances agreed before the parallel run starts — per policy, per cohort, in total — with a named owner for every breach. A tolerance negotiated after you've seen the differences is not a tolerance; it's an excuse.
+  </li>
+</ul>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Policyholder behavior and the annuity problem</h2>
+<p>Expect legitimate differences, and document them as such. Floating-point summation order alone will move the last digits when a calculation goes parallel: summing a million discounted cashflows in a different order gives a slightly different total, and chasing exact binary equality across platforms is a waste of a parallel run. The governance answer is not "make it identical"; it's "explain the difference, bound it, and show it doesn't matter at the decision level."</p>
 
-<p>The other frontier is behavior — lapse, surrender, and benefit utilization. I've developed predictive models in R to analyze policyholder behavior, lapse, and benefit-utilization patterns, and this became especially urgent for annuity products during the recent high-interest-rate environment.</p>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">The new platform changes what governance can be</h2>
 
-<p>When rates spiked in 2022–2023, lapse behavior on fixed indexed annuities (FIAs) and multi-year guaranteed annuities (MYGAs) shifted dramatically. The scale was striking: in the LIMRA/SOA fixed-rate deferred annuity study, surrender rates in the year the surrender charge expired jumped to 54% by contract count in 2022, versus 29.7% for 2015–2019, and contract-year-six "shock" surrenders reached as high as 68.7% by contract value. Policyholders behave rationally: when a competitor offers a materially higher rate, they walk.</p>
+<p>Here's the part the risk register usually misses: done properly, the migration leaves you with better governance than you started with, because the modern stack has controls the legacy estate could never offer.</p>
 
-<p>For FIA and MYGA products in that environment, I built custom predictive models applying data bucketing plus supervised and unsupervised machine learning — for pricing, lapse analysis, and customer segmentation. Unsupervised clustering is genuinely useful here: it surfaces natural policyholder segments (by size, by rate sensitivity, by tenure) that you can then price and manage differently. Larger policies, for instance, lapse far more efficiently than small ones — industry studies show shock lapses for policies of $200,000 and over run roughly twice those of policies under $50,000 — so treating them identically leaves money on the table. This work is also becoming regulatory table stakes: emerging principle-based frameworks like VM-22 require insurers to use their own best-estimate dynamic behavior assumptions on deferred annuities.</p>
+<p>On the Databricks builds I delivered, Delta Lake versioning meant every input table and every result set was reproducible as-of any run date — the "which spreadsheet did we use in Q3?" conversation ceases to exist. MLflow gave model versioning and performance tracking, so the answer to "what changed between these two runs?" is a diff, not an interview. Runs that took long enough to discourage sensitivity testing now finish fast enough that testing the basis ten ways before a committee meeting is routine — a 40% runtime reduction isn't only a cost line, it's a control improvement, because a model you can afford to re-run is a model you can afford to challenge.</p>
 
-<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">The governance dimension</h2>
+<p>But none of that arrives automatically. A notebook environment without discipline is Excel with better marketing — the same untracked copies, the same "final_v2_FIXED" culture, at larger scale. The governance artifacts have to be built in: version-pinned clusters, code review on calculation logic, immutable published result tables, and a documented model inventory entry that says what the model is for, what it assumes, and where it should not be used.</p>
 
-<p>None of this happens in a regulatory vacuum. The NAIC's Model Bulletin on the use of AI — adopted by the NAIC in December 2023 — has now been adopted by 24 states plus the District of Columbia, and it demands documented governance, transparency, and accountability for any model touching underwriting, rating, or claims. An AI System Evaluation Tool pilot is scheduled to run from March to September 2026. The practical implication: every predictive model needs an audit trail, documented validation, and someone accountable. Model risk management is no longer optional overhead — it's the price of deploying these tools at all.</p>
+<h2 style="font-size: var(--font-size-lg); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Appropriateness is a judgment, and someone has to make it</h2>
 
-<p>That combination — classical actuarial rigor plus modern machine learning, deployed inside a defensible governance framework — is where I focus. If you're modernizing your mortality basis, building lapse models for a shifting rate environment, or standing up predictive analytics for reinsurance pricing, I'd welcome a conversation.</p>
+<p>The formal model-appropriateness assessment I ran for the VM-21 engine asked questions no reconciliation can answer: Is this methodology still fit for the products on the books today? Which limitations of the legacy model did we faithfully carry over — and should we have? Where does the model's validity end? Writing the limitations section honestly is uncomfortable, because a migration team is institutionally motivated to declare victory. That is exactly why the assessment should be written by someone whose success is not measured by the go-live date.</p>
+
+<p>A migration ends not when the new platform runs, but when the old one can be switched off and nobody objects — because the reconciliation evidence, the documented differences, and the appropriateness assessment together make the case that the model survived the move intact. That evidence pack is a deliverable, and it deserves the same craft as the engine itself.</p>
+
+<p>If you're planning or mid-way through a model migration and the reconciliation, documentation, or model-risk framework needs an experienced hand — that's work I do. <a href="../index.html#contact" style="font-weight: 600; text-decoration: underline;">Get in touch.</a></p>
 
       </div>
 
       <!-- Article Footer / CTA -->
       <hr style="border: 0; border-top: 1px solid var(--color-surface-border); margin-block: var(--spacing-xxl);">
-      
+
       <div class="glass-card" style="padding: var(--spacing-xl); border-radius: var(--radius-md); text-align: center;">
-        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); color: var(--color-text-primary);">Need Expert Pricing & Modeling Solutions?</h3>
+        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm); font-family: var(--font-heading); color: var(--color-text-primary);">Need Expert Pricing &amp; Modeling Solutions?</h3>
         <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md); max-width: 600px; margin-inline: auto;">
           I work with insurers, reinsurers, and consulting firms under flexible technical delivery frameworks to evaluate complex risks, model extreme scenarios, and modernise legacy calculations.
         </p>
@@ -143,65 +158,43 @@
           <a href="../assets/Yash_Actuarial_Analytics_Proposal.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View Consulting Proposal</a>
         </div>
       </div>
-      
+
       <!-- Read More Navigation -->
       <div style="margin-top: var(--spacing-xxl);">
         <h4 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-md); font-family: var(--font-heading); font-weight: 700; border-bottom: 1px solid var(--color-surface-border); padding-bottom: 8px; color: var(--color-text-primary);">
           Other Featured Insights
         </h4>
         <div class="grid grid-2" style="gap: var(--spacing-md);">
-          
-          <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
-            <div>
-              <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Parametric Climate</span>
-              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk in Emerging Markets</h5>
-            </div>
-            <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
-              <span>May 2026</span>
-              <a href="parametric-insurance-climate-risk.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
-            </div>
-          </div>
-        
-          <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
-            <div>
-              <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Parametric Climate</span>
-              <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Designing and Pricing a Multi-Peril Parametric Product: A Practitioner's Walkthrough</h5>
-            </div>
-            <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
-              <span>May 2026</span>
-              <a href="designing-pricing-multi-peril-parametric.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
-            </div>
-          </div>
-        
+
           <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
             <div>
               <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
               <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Modernizing Actuarial Modeling: Moving VM-21 and Statutory Calculations Off Excel and Onto Databricks</h5>
             </div>
             <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
-              <span>May 2026</span>
+              <span>Jan 2025</span>
               <a href="modernizing-actuarial-modeling-vm21.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
             </div>
           </div>
-        
+
           <div class="insight-card scroll-reveal" style="display: flex; flex-direction: column; justify-content: space-between; padding: var(--spacing-md); border-radius: var(--radius-md); background-color: var(--color-surface); border: 1px solid var(--color-surface-border);">
             <div>
               <span style="color: var(--color-text-muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Distributed Systems</span>
               <h5 style="font-size: var(--font-size-sm); margin-top: 8px; margin-bottom: var(--spacing-xs); font-family: var(--font-heading); font-weight: 400; color: var(--color-text-primary);">Building Billion-Record Experience-Study Pipelines with Delta Lake, Spark, and MLflow</h5>
             </div>
             <div style="margin-top: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-muted);">
-              <span>May 2026</span>
+              <span>Jan 2025</span>
               <a href="billion-record-experience-study-spark.html" style="font-weight: 600; color: var(--color-accent);">Read Article &rarr;</a>
             </div>
           </div>
-        
+
         </div>
       </div>
 
     </article>
   </main>
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid grid">
       <div class="footer-brand">

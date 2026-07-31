@@ -1,33 +1,20 @@
 const initPortfolio = () => {
-  
-  // ==========================================================================
-  // Header Scroll State
-  // ==========================================================================
-  const header = document.getElementById('header');
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      header.classList.add('header-scrolled');
-    } else {
-      header.classList.remove('header-scrolled');
-    }
-  };
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial run
 
-  // Mobile Navigation (A11y Compliant)
+  // ==========================================================================
+  // Mobile Navigation (A11y compliant)
   // ==========================================================================
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  
+
   if (menuBtn && mobileMenu) {
     const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
-    
+
     const toggleMenu = () => {
       const isOpen = mobileMenu.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', isOpen);
       menuBtn.classList.toggle('open');
       document.body.style.overflow = isOpen ? 'hidden' : '';
-      
+
       if (isOpen) {
         // Focus first link on opening
         setTimeout(() => mobileLinks[0].focus(), 100);
@@ -35,7 +22,7 @@ const initPortfolio = () => {
     };
 
     menuBtn.addEventListener('click', toggleMenu);
-    
+
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         // Close menu on selecting a link
@@ -46,7 +33,7 @@ const initPortfolio = () => {
       });
     });
 
-    // Focus Trapping for mobile menu accessibility
+    // Focus trapping for mobile menu accessibility
     mobileMenu.addEventListener('keydown', (e) => {
       if (e.key === 'Tab') {
         const focusables = Array.from(mobileLinks);
@@ -65,50 +52,6 @@ const initPortfolio = () => {
   }
 
   // ==========================================================================
-  // Theme Management (Native Color-Scheme Toggle)
-  // ==========================================================================
-  const themeToggle = document.getElementById('themeToggle');
-  
-  const getThemePreference = () => {
-    const saved = localStorage.getItem('theme-preference');
-    if (saved) return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  };
-
-  const applyTheme = (theme) => {
-    document.documentElement.style.colorScheme = theme;
-    localStorage.setItem('theme-preference', theme);
-    
-    // Customize logo icons based on theme choice (sun/moon display options)
-    if (theme === 'dark') {
-      document.documentElement.style.setProperty('--sun-display', 'block');
-    } else {
-      document.documentElement.style.setProperty('--sun-display', 'block'); // Or replace icon SVG if needed
-    }
-  };
-
-  // Init theme
-  const initialTheme = getThemePreference();
-  applyTheme(initialTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.style.colorScheme || initialTheme;
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-    });
-  }
-
-  // Listen for system changes if no override is set
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('theme-preference')) {
-      applyTheme(e.matches ? 'dark' : 'light');
-    }
-  });
-
-
-
-  // ==========================================================================
   // Form Submission & Validation Management
   // ==========================================================================
   const contactForm = document.getElementById('contactForm');
@@ -119,17 +62,9 @@ const initPortfolio = () => {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const controls = contactForm.querySelectorAll('.form-control');
-
       if (!contactForm.checkValidity()) {
         alertSuccess.style.display = 'none';
         alertError.style.display = 'block';
-        controls.forEach(control => {
-          if (!control.validity.valid) {
-            control.classList.add('invalid-shake');
-            setTimeout(() => control.classList.remove('invalid-shake'), 500);
-          }
-        });
         return;
       }
 
@@ -158,7 +93,7 @@ const initPortfolio = () => {
         alertError.style.display = 'block';
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Secure Message';
+        submitBtn.textContent = 'Send message';
       }
     });
   }
@@ -170,8 +105,8 @@ const initPortfolio = () => {
   const navLinks = document.querySelectorAll('.nav-link');
 
   const highlightNav = () => {
-    let scrollPos = window.scrollY + 120; // Offset for sticky navbar
-    
+    let scrollPos = window.scrollY + 120; // Offset for fixed navbar
+
     sections.forEach(section => {
       if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
         const id = section.getAttribute('id');
@@ -196,46 +131,6 @@ const initPortfolio = () => {
   const currentYearSpan = document.getElementById('currentYear');
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
-  }
-
-  // ==========================================================================
-  // Background Carousel Cycle
-  // ==========================================================================
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length > 0) {
-    let currentSlide = 0;
-    const nextSlide = () => {
-      const prevSlide = currentSlide;
-      slides[prevSlide].classList.remove('active');
-      slides[prevSlide].classList.add('outgoing');
-      
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-      
-      setTimeout(() => {
-        slides[prevSlide].classList.remove('outgoing');
-      }, 1500); // matches the CSS transition time of 1.5s
-    };
-    setInterval(nextSlide, 5000); // Transition slide every 5 seconds
-
-    // Diagnose Image Load Status in Developer Console
-    slides.forEach((slide, index) => {
-      const styleBg = slide.style.backgroundImage;
-      const match = styleBg.match(/url\(['"]?([^'"]+)['"]?\)/);
-      if (match && match[1]) {
-        const url = match[1];
-        const tester = new Image();
-        tester.onload = () => {
-          console.log(`[Carousel Debug] Slide ${index + 1} Image Loaded successfully: ${url} (${tester.width}x${tester.height})`);
-        };
-        tester.onerror = (err) => {
-          console.error(`[Carousel Debug] Slide ${index + 1} Image FAILED to load at path: ${url}. Verify the file is in the assets folder.`, err);
-        };
-        tester.src = url;
-      } else {
-        console.warn(`[Carousel Debug] Slide ${index + 1} has no valid background image URL.`);
-      }
-    });
   }
 };
 

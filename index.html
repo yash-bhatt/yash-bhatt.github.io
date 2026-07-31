@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yash Bhatt - Premium Actuarial & Pricing Consultant. Specializing in parametric climate insurance, reinsurance pricing, PySpark/Databricks modeling engines, and machine learning.">
-  <title>Yash Bhatt | Actuarial Pricing & Analytics Consultant</title>
-  
-  <!-- CSS Stylesheet Modules -->
-  <link rel="stylesheet" href="css/variables.css?v=1.4">
-  <link rel="stylesheet" href="css/base.css?v=1.4">
-  <link rel="stylesheet" href="css/layout.css?v=1.4">
-  <link rel="stylesheet" href="css/components.css?v=1.4">
-  <link rel="stylesheet" href="css/animations.css?v=1.4">
+  <meta name="description" content="Independent actuarial consultant (IFoA associate). Parametric insurance pricing, reinsurance and life pricing, VM-21 modeling, and Databricks model modernization for insurers and reinsurers.">
+  <title>Yash Bhatt — Parametric & Reinsurance Pricing Consultant (IFoA)</title>
 
-  <!-- Print Stylesheet for PDF CV Generation -->
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Yash Bhatt — Parametric & Reinsurance Pricing Consultant (IFoA)">
+  <meta property="og:description" content="Parametric and life/reinsurance pricing, VM-21 modeling, and Databricks model modernization for insurers and reinsurers. Delivered by an IFoA associate who ships the production systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yash-bhatt.github.io/">
+  <meta property="og:image" content="https://yash-bhatt.github.io/assets/photos/hero-clouds.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff9ee'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='14' font-weight='700' fill='%233f322a' text-anchor='middle'%3EYB%3C/text%3E%3C/svg%3E">
+
+  <!-- CSS Stylesheet Modules -->
+  <link rel="stylesheet" href="css/variables.css?v=2.0">
+  <link rel="stylesheet" href="css/base.css?v=2.0">
+  <link rel="stylesheet" href="css/layout.css?v=2.0">
+  <link rel="stylesheet" href="css/components.css?v=2.0">
+  <link rel="stylesheet" href="css/animations.css?v=2.0">
+
+  <!-- Print Stylesheet for PDF export -->
   <style>
     @media print {
       body {
@@ -21,7 +31,7 @@
         color: #000 !important;
         font-size: 11pt !important;
       }
-      .header, .menu-btn, .mobile-menu, .scroll-progress-bar, #contact, #calculator, .btn, .footer-brand-text, .theme-toggle {
+      .header, .menu-btn, .mobile-menu, #contact, .btn, .footer-brand-text, .hero-photo, .hero-wordmark, .full-bleed {
         display: none !important;
       }
       .section {
@@ -32,71 +42,47 @@
         max-width: 100% !important;
         padding-inline: 0 !important;
       }
-      .timeline-container {
-        border-left: 1px solid #ccc !important;
-      }
-      .card, .glass-card, .metric-card {
-        background: #fff !important;
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-        color: #000 !important;
-        transform: none !important;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-progress-bar" id="progressBar"></div>
-
-  <!-- Header Section -->
+  <!-- Header -->
   <header class="header" id="header">
     <div class="container nav">
       <a href="#hero" class="logo" aria-label="Yash Bhatt Home">
-        YASH BHATT
+        Yash Bhatt
       </a>
-      
+
       <!-- Desktop Navigation Links -->
       <nav aria-label="Primary Navigation">
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link">Expertise</a></li>
+          <li><a href="#profile" class="nav-link">About</a></li>
+          <li><a href="#about" class="nav-link">Practice</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#skills" class="nav-link">Tools</a></li>
           <li class="nav-item dropdown">
-            <a href="#insights" class="nav-link dropdown-toggle">Articles</a>
+            <a href="#insights" class="nav-link dropdown-toggle">Writing</a>
             <ul class="dropdown-menu">
-              <li><a href="articles/parametric-insurance-climate-risk.html" class="dropdown-item">1. Parametric Climate Risk</a></li>
-              <li><a href="articles/designing-pricing-multi-peril-parametric.html" class="dropdown-item">2. Designing Parametric Products</a></li>
-              <li><a href="articles/predictive-analytics-life-insurance.html" class="dropdown-item">3. Predictive Analytics in Life</a></li>
-              <li><a href="articles/modernizing-actuarial-modeling-vm21.html" class="dropdown-item">4. Modernizing VM-21 Reserving</a></li>
-              <li><a href="articles/billion-record-experience-study-spark.html" class="dropdown-item">5. Billion-Record Study Pipelines</a></li>
+              <li><a href="articles/parametric-insurance-climate-risk.html" class="dropdown-item">Parametric Insurance &amp; Climate Risk</a></li>
+              <li><a href="articles/designing-pricing-multi-peril-parametric.html" class="dropdown-item">Designing Multi-Peril Parametric Products</a></li>
+              <li><a href="articles/mortality-curves-actuarial-laws-glm-splines.html" class="dropdown-item">Mortality Curves You Can Defend</a></li>
+              <li><a href="articles/predictive-analytics-life-insurance.html" class="dropdown-item">Predictive Analytics in Life Insurance</a></li>
+              <li><a href="articles/microinsurance-vietnam-remittance.html" class="dropdown-item">Micro-Insurance at Remittance Scale</a></li>
+              <li><a href="articles/modernizing-actuarial-modeling-vm21.html" class="dropdown-item">Moving VM-21 to Databricks</a></li>
+              <li><a href="articles/billion-record-experience-study-spark.html" class="dropdown-item">Billion-Record Study Pipelines</a></li>
+              <li><a href="articles/model-governance-platform-migration.html" class="dropdown-item">Model Risk in Platform Migration</a></li>
             </ul>
           </li>
-          <li><a href="#contact" class="nav-link btn btn-secondary">Get in Touch</a></li>
+          <li><a href="tools/index.html" class="nav-link">Tools</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Theme Toggle & Hamburger -->
-      <div class="flex-center" style="gap: var(--spacing-md);">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" style="cursor: pointer; padding: var(--spacing-xs); display: flex; align-items: center; border-radius: var(--radius-sm); border: 1px solid var(--color-surface-border);">
-          <!-- Sun Icon (shows in dark theme) -->
-          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--sun-display, block); color: var(--color-text-primary);">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <!-- Moon Icon (shows in light theme) -->
-          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: var(--moon-display, none); color: var(--color-text-primary);">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <span class="menu-btn-bar"></span>
-          <span class="menu-btn-bar"></span>
-          <span class="menu-btn-bar"></span>
-        </button>
-      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
     </div>
   </header>
 
@@ -104,178 +90,198 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav aria-label="Mobile Navigation">
       <ul class="mobile-nav-list">
-        <li><a href="#about" class="mobile-nav-link">Expertise</a></li>
+        <li><a href="#profile" class="mobile-nav-link">About</a></li>
+        <li><a href="#about" class="mobile-nav-link">Practice</a></li>
         <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
-        <li><a href="#skills" class="mobile-nav-link">Tools</a></li>
-        <li><a href="#insights" class="mobile-nav-link">Articles</a></li>
+        <li><a href="#insights" class="mobile-nav-link">Writing</a></li>
+        <li><a href="tools/index.html" class="mobile-nav-link">Tools</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
     </nav>
   </div>
 
   <main>
-    
-    <!-- Hero Section -->
-    <section class="section" id="hero" style="min-height: 100dvh; height: 100dvh; display: flex; align-items: center; position: relative; isolation: isolate;">
-      
-      <!-- Background Carousel -->
-      <div class="hero-carousel-container">
-        <div class="hero-slide active" style="background-image: url('assets/img1.png');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img2.png');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img3.png');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img4.png');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img5.png');"></div>
-      </div>
-      
-      <!-- Ambient overlay mask to maintain contrast/readability -->
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, var(--color-overlay-start) 0%, var(--color-overlay-mid) 45%, var(--color-overlay-end) 100%); z-index: 2; pointer-events: none;"></div>
-      
-      <div class="container" style="position: relative; z-index: 3;">
-        <div class="hero-content" style="max-width: 850px;">
-          <div class="animate-pulse-soft" style="display: inline-flex; align-items: center; gap: var(--spacing-xs); background-color: var(--color-accent-subtle); border: 1px solid var(--color-accent); color: var(--color-accent); font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: var(--spacing-xs) var(--spacing-sm); border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
-            <span>● Independent Actuarial Consultant</span>
-          </div>
-          
-          <h1 style="font-size: var(--font-size-display); margin-bottom: var(--spacing-md); letter-spacing: -0.02em; line-height: 1.15;">
-            Actuarial transformations and predictive analytics for <span class="logo-accent" style="background: linear-gradient(135deg, var(--color-accent), var(--color-text-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Life Annuities</span>, <span class="logo-accent" style="background: linear-gradient(135deg, var(--color-accent), var(--color-text-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Parametric Insurance</span> and <span class="logo-accent" style="background: linear-gradient(135deg, var(--color-accent), var(--color-text-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Reinsurance Operations</span>.
+
+    <!-- Hero — full-bleed photography, statement at bottom-left -->
+    <section id="hero" class="hero-photo" style="margin-top: var(--header-height); background-image: url('assets/photos/hero-clouds.jpg');">
+      <span class="hero-wordmark" aria-hidden="true">Bhatt</span>
+      <div class="container">
+        <div style="max-width: 780px;">
+          <span class="section-label" style="color: #fff;">Independent Actuarial Consultant · IFoA Associate</span>
+          <h1 class="display-headline" style="margin-bottom: var(--spacing-md);">
+            Pricing, parametric product design, and actuarial model modernization.
           </h1>
-          
-          <p style="font-size: var(--font-size-md); color: var(--color-text-secondary); margin-bottom: var(--spacing-xl); max-width: 700px; line-height: 1.6;">
-            Associate of the Institute of Actuaries integrating financial mathematics, big data pipelines, and predictive algorithms to price climate perils, optimize reinsurance portfolios, and build high-performance calculation engines.
+          <p style="font-size: var(--font-size-base); max-width: 560px; line-height: 1.5; margin-bottom: var(--spacing-lg); color: rgba(255,255,255,0.88);">
+            For insurers and reinsurers. Six years pricing life, annuity, and parametric risk — and rebuilding the models behind it on Databricks — from an IFoA associate who ships the production systems, not just the memos.
           </p>
-          
-          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md);">
-            <a href="#contact" class="btn btn-primary">Partner With Me</a>
-            <a href="assets/Yash_Actuarial_Analytics_Proposal.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View Consulting Proposal</a>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center;">
+            <a href="#contact" class="btn btn-primary">Book a 30-minute scoping call</a>
+            <a href="assets/Yash_Actuarial_Analytics_Proposal.pdf" class="btn btn-secondary" style="color: #fff;" target="_blank" rel="noopener">View consulting proposal</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Client Logo Strip -->
-    <section class="section-alt" style="padding-block: var(--spacing-lg); border-block: 1px solid var(--color-surface-border); overflow: hidden;">
+    <!-- Client strip -->
+    <section class="section" style="padding-block: var(--spacing-lg); border-bottom: 1px solid var(--color-surface-border);">
       <div class="container" style="text-align: center;">
-        <span style="color: var(--color-text-muted); font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: var(--spacing-md);">Trusted By & Consulted For</span>
-        <h2 class="sr-only">Companies Consulted For</h2>
+        <span class="section-label" style="color: var(--color-text-muted); margin-bottom: var(--spacing-md);">Engagements delivered at &amp; for</span>
+        <h2 class="sr-only">Organizations where work has been delivered</h2>
         <div class="client-logo-wrapper">
-          <!-- Milliman Logo -->
           <div class="client-logo-card" aria-label="Milliman">
-            <img src="assets/milliman_logo.png" alt="Milliman Logo" class="client-logo-img">
+            <img src="assets/milliman_logo.svg" alt="Milliman" class="client-logo-img">
           </div>
-          <!-- RGA Logo -->
           <div class="client-logo-card" aria-label="RGA">
-            <img src="assets/rga_logo.png" alt="RGA Logo" class="client-logo-img">
+            <img src="assets/rga_logo.svg" alt="RGA" class="client-logo-img" style="max-height: 40px;">
           </div>
-          <!-- Prudential Logo -->
           <div class="client-logo-card" aria-label="Prudential">
-            <img src="assets/prudential_logo.png" alt="Prudential Logo" class="client-logo-img">
+            <img src="assets/prudential_logo.png" alt="Prudential" class="client-logo-img">
           </div>
-          <!-- TeamLease Logo -->
           <div class="client-logo-card" aria-label="TeamLease">
-            <img src="assets/teamlease_logo.png" alt="TeamLease Logo" class="client-logo-img">
+            <img src="assets/teamlease_logo.png" alt="TeamLease" class="client-logo-img">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About & Core Expertise Section -->
+    <!-- About — editorial split: photograph and career arc -->
+    <section class="section" id="profile">
+      <div class="container">
+        <span class="section-label">About</span>
+        <div class="grid grid-2" style="gap: var(--spacing-xl); align-items: start;">
+          <img src="assets/photos/valley.jpg" alt="A glacial valley running between two mountain ranges" loading="lazy" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover;">
+          <div class="prose scroll-reveal">
+            <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md);">The pricing work and the engineering it runs on.</h2>
+            <p>
+              I started at Milliman in 2020 as an intern building cashflow models for Indian life products, and left four and a half years later as an actuarial data scientist responsible for VM-21 engines and billion-record experience-study pipelines on Databricks. Since January 2025 I have worked independently, pricing term and credit life reinsurance for RGA and designing a multi-peril parametric climate product for South-East Asia.
+            </p>
+            <p>
+              I am an Associate of the Institute and Faculty of Actuaries — ten exams passed — with a mathematics degree from the University of Delhi. The through-line of my work is simple: pricing rigor and production engineering belong to the same person. A basis you can defend in front of a regulator, running on a pipeline that refreshes in hours rather than quarters.
+            </p>
+            <a href="assets/Yash_Bhatt_Resume.pdf" class="btn btn-link" download>Download r&eacute;sum&eacute; (PDF) &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice areas -->
     <section class="section" id="about">
       <div class="container">
-        <div style="max-width: 700px; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Capabilities</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Core Competencies & Services</h2>
-          <p style="color: var(--color-text-secondary);">
-            Combining rigorous actuarial standards with advanced computational structures, I work with insurers, reinsurers, and consulting teams to evaluate complex risks, model extreme scenarios, and modernise legacy calculations.
+        <hr class="hairline" style="margin-bottom: var(--spacing-lg);">
+        <span class="section-label">Practice areas</span>
+        <div style="max-width: 680px; margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: var(--font-size-xxl); margin-bottom: var(--spacing-md);">Four offers, each with the production system behind it.</h2>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: 1.41;">
+            I work with insurers, reinsurers, and consulting teams to evaluate complex risks, model extreme scenarios, and modernize legacy calculations — and I stay until the result runs in production.
           </p>
         </div>
 
-        <div class="grid grid-3">
-          <!-- Card 1: Parametric & Climate -->
-          <div class="glass-card scroll-reveal">
-            <div style="background-color: var(--color-accent-subtle); color: var(--color-accent); width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: var(--font-size-md); font-weight: 700; margin-bottom: var(--spacing-sm);">Parametric & Climate Risk</h3>
+        <div class="grid grid-2" style="gap: var(--spacing-lg);">
+          <!-- 01 Parametric -->
+          <div class="scroll-reveal" style="border-top: 1px solid var(--color-surface-border); padding-top: var(--spacing-md);">
+            <span class="section-label" style="color: var(--color-text-muted);">01 — Parametric Product Design &amp; Pricing</span>
+            <h3 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-sm);">See the loss distribution before you commit capital.</h3>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-              End-to-end design, pricing, and structuring of parametric solutions. Trigger metrics calibration, burn cost analysis, historical climate testing, and AAL profiling for temperature, precipitation, and pollution.
+              Trigger definition through payout structure, rating logic, and policy wording — with burn cost, AAL, and stress testing under historical and stressed climate scenarios. Built and priced in Python for a multi-peril (heat, rain, storm, pollution) product in South-East Asia.
             </p>
           </div>
 
-          <!-- Card 2: Reinsurance & Life -->
-          <div class="glass-card scroll-reveal">
-            <div style="background-color: var(--color-accent-subtle); color: var(--color-accent); width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: var(--font-size-md); font-weight: 700; margin-bottom: var(--spacing-sm);">Reinsurance & Life Pricing</h3>
+          <!-- 02 Reinsurance & Life -->
+          <div class="scroll-reveal" style="border-top: 1px solid var(--color-surface-border); padding-top: var(--spacing-md);">
+            <span class="section-label" style="color: var(--color-text-muted);">02 — Reinsurance &amp; Life Pricing Support</span>
+            <h3 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-sm);">Specialist pricing capacity that plugs into your process.</h3>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-              Actuarial valuation, assumption setting, and pricing basis development for term, credit, and savings products. Proficient in GGY-AXIS tuning, mortality curves modeling (GLMs/splines), and sensitivity analysis.
+              Experience analysis and basis development for term life and credit life, mortality curves you can defend (actuarial laws + GLM splines), mortality improvement from IIB and census data, and GGY-AXIS maintenance and sensitivity testing. Delivered on RGA reinsurance engagements.
             </p>
           </div>
 
-          <!-- Card 3: Large-Scale Actuarial Systems -->
-          <div class="glass-card scroll-reveal">
-            <div style="background-color: var(--color-accent-subtle); color: var(--color-accent); width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-              </svg>
-            </div>
-            <h3 style="font-size: var(--font-size-md); font-weight: 700; margin-bottom: var(--spacing-sm);">Big Data & Machine Learning</h3>
+          <!-- 03 Modernization -->
+          <div class="scroll-reveal" style="border-top: 1px solid var(--color-surface-border); padding-top: var(--spacing-md);">
+            <span class="section-label" style="color: var(--color-text-muted);">03 — Actuarial Model Modernization</span>
+            <h3 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-sm);">Refreshes that run in hours, not quarterly fire drills.</h3>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
-              Rebuilding legacy engines onto Databricks, PySpark, and Delta Lake. Experience analyzing annuity portfolios exceeding 1B+ rows, implementing MLflow pipelines, and designing predictive model systems.
+              Legacy Excel, R, and AXIS estates rebuilt on Databricks, PySpark, and Delta Lake, with formal model-appropriateness and model-risk assessment. A VM-21 engine plus cashflow, hedging, and risk models; 1B+ record, $1T fund-value pipelines cut 40% via Spark SQL and cluster tuning; MLflow versioning; MG-ALFA/Integrate transition.
+            </p>
+          </div>
+
+          <!-- 04 Predictive -->
+          <div class="scroll-reveal" style="border-top: 1px solid var(--color-surface-border); padding-top: var(--spacing-md);">
+            <span class="section-label" style="color: var(--color-text-muted);">04 — Policyholder Behavior &amp; Predictive Analytics</span>
+            <h3 style="font-size: var(--font-size-md); margin-bottom: var(--spacing-sm);">Know which policies will lapse before it shows in results.</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+              Lapse and segmentation models for FIA and MYGA in a high-rate, elevated-lapse environment (supervised and unsupervised); risk-relativity and high-risk-life flagging with XGBoost, logistic, and linear models; seriatim experience-study pipelines in SQL Server and R. A Databricks sparkR/sparklyr POC beat legacy R runtimes.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Timeline Section -->
-    <section class="section section-alt" id="experience">
+    <!-- Key numbers — quiet data strip -->
+    <section class="section" style="padding-block: var(--spacing-lg);">
       <div class="container">
-        <div style="max-width: 700px; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Career Path</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Professional Experience</h2>
-          <p style="color: var(--color-text-secondary);">
-            A track record of designing next-generation pricing models and migrating heavy legacy calculations to production-grade distributed environments.
-          </p>
+        <div class="grid grid-4">
+          <div class="metric-card scroll-reveal">
+            <div class="metric-number">$1.0T+</div>
+            <div class="metric-label">Fund exposure modeled</div>
+            <div class="metric-desc">Annuity fund values analyzed inside Databricks.</div>
+          </div>
+          <div class="metric-card scroll-reveal">
+            <div class="metric-number">1B+</div>
+            <div class="metric-label">Records processed</div>
+            <div class="metric-desc">Experience-study data on parallel Spark clusters.</div>
+          </div>
+          <div class="metric-card scroll-reveal">
+            <div class="metric-number">40%</div>
+            <div class="metric-label">Runtime reduction</div>
+            <div class="metric-desc">Spark SQL optimization and Delta Lake clustering.</div>
+          </div>
+          <div class="metric-card scroll-reveal">
+            <div class="metric-number">10</div>
+            <div class="metric-label">Actuarial exams passed</div>
+            <div class="metric-desc">Associate of the Institute and Faculty of Actuaries.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <hr class="hairline" style="margin-bottom: var(--spacing-lg);">
+        <span class="section-label">Experience</span>
+        <div style="max-width: 680px; margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: var(--font-size-xxl);">Six years, one through-line: models that hold up and run fast.</h2>
         </div>
 
         <div class="timeline-container">
           <!-- Timeline Item 1 -->
           <div class="timeline-item active scroll-reveal">
             <div class="timeline-dot"></div>
-            <div class="card">
+            <div>
               <div class="timeline-header">
                 <div>
-                  <h3 class="timeline-title">Pricing & Product Development Consultant</h3>
+                  <h3 class="timeline-title">Pricing &amp; Product Development Consultant</h3>
                   <div class="timeline-meta">
                     <span>Independent Consulting</span>
-                    <span>•</span>
+                    <span>&middot;</span>
                     <span>Remote</span>
                   </div>
                 </div>
                 <span class="timeline-date">Jan 2025 – Present</span>
               </div>
               <div class="timeline-content">
-                <p><strong>Parametric Climate Product Design:</strong></p>
+                <p><strong>Parametric climate product design</strong></p>
                 <ul class="timeline-bullet-list">
                   <li>Designed and priced parametric structures for South-East Asia climate risks (heat, storm, rain, pollution) from trigger thresholds to payout structures.</li>
-                  <li>Built Python prototypes to stress-test historical weather events and model Burn Cost, Average Annual Loss (AAL), and load factors.</li>
+                  <li>Built Python prototypes to stress-test historical weather events and model burn cost, average annual loss (AAL), and load factors.</li>
                   <li>Drafted policy triggers, payouts, and legal basis criteria documents.</li>
                 </ul>
-                <p style="margin-top: var(--spacing-sm);"><strong>Reinsurance Pricing (Client: RGA):</strong></p>
+                <p style="margin-top: var(--spacing-sm);"><strong>Reinsurance pricing (client: RGA)</strong></p>
                 <ul class="timeline-bullet-list">
                   <li>Priced term life and credit life reinsurance products through experience studies.</li>
                   <li>Maintained GGY-AXIS models for pricing valuations and basis sensitivity testing.</li>
                   <li>Built actuarial mortality curves using law-based calibrations and GLM spline estimators.</li>
-                  <li>Analyzed long-term mortality improvements and applied machine learning (XGBoost) to detect high-risk lives.</li>
+                  <li>Analyzed long-term mortality improvement (IIB and census data) and applied XGBoost, logistic, and linear models to assess risk relativities and flag high-risk lives.</li>
                 </ul>
               </div>
             </div>
@@ -284,13 +290,13 @@
           <!-- Timeline Item 2 -->
           <div class="timeline-item scroll-reveal">
             <div class="timeline-dot"></div>
-            <div class="card">
+            <div>
               <div class="timeline-header">
                 <div>
                   <h3 class="timeline-title">Actuarial Data Scientist</h3>
                   <div class="timeline-meta">
                     <span>Milliman</span>
-                    <span>•</span>
+                    <span>&middot;</span>
                     <span>Remote</span>
                   </div>
                 </div>
@@ -299,11 +305,12 @@
               <div class="timeline-content">
                 <ul class="timeline-bullet-list">
                   <li>Built a high-performance VM-21 calculation engine on Databricks/PySpark, replacing legacy desktop Excel runs and formally evaluating model appropriateness.</li>
-                  <li>Architected Databricks pipelines processing variable annuity experience studies for portfolios exceeding 1 billion rows and $1 trillion USD assets.</li>
+                  <li>Architected Databricks pipelines processing variable annuity experience studies for portfolios exceeding 1 billion rows and $1 trillion USD in fund value.</li>
                   <li>Optimized Spark SQL execution configurations and Delta Lake version control, cutting model runtime by 40% and lowering cloud costs.</li>
-                  <li>Integrated MLflow to track performance, version control predictive models, and log experiments.</li>
-                  <li>Designed lapse models for FIA and MYGA products utilizing unsupervised clustering and supervised algorithms during high interest-rate environments.</li>
+                  <li>Integrated MLflow to track performance, version predictive models, and log experiments.</li>
+                  <li>Designed lapse models for FIA and MYGA products using unsupervised clustering and supervised algorithms during a high interest-rate environment.</li>
                   <li>Collaborated with MG-ALFA and Milliman Integrate teams to scale calculations.</li>
+                  <li>Led and expanded a team of actuarial data analysts, building training and onboarding materials.</li>
                 </ul>
               </div>
             </div>
@@ -312,13 +319,13 @@
           <!-- Timeline Item 3 -->
           <div class="timeline-item scroll-reveal">
             <div class="timeline-dot"></div>
-            <div class="card">
+            <div>
               <div class="timeline-header">
                 <div>
                   <h3 class="timeline-title">Actuarial Data Analyst</h3>
                   <div class="timeline-meta">
                     <span>Milliman</span>
-                    <span>•</span>
+                    <span>&middot;</span>
                     <span>Remote</span>
                   </div>
                 </div>
@@ -326,10 +333,10 @@
               </div>
               <div class="timeline-content">
                 <ul class="timeline-bullet-list">
-                  <li>Developed annuity experience study data pipelines in SQL Server and R, calculating seriatim exposure metrics and ensuring data quality.</li>
-                  <li>Coded policyholder behavior predictive models (surrender, benefit utilization) using R.</li>
-                  <li>Led a Databricks proof-of-concept using SparkR and SparklyR to migrate legacy single-thread R codes to highly scalable parallel pipelines.</li>
-                  <li>Contributed to micro-insurance product pricing (Vietnam market) with remittance payment mechanics.</li>
+                  <li>Developed annuity experience-study data pipelines in SQL Server and R, calculating seriatim exposure metrics and ensuring data quality.</li>
+                  <li>Coded policyholder behavior predictive models (surrender, benefit utilization) in R.</li>
+                  <li>Led a Databricks proof-of-concept using sparkR and sparklyr to migrate legacy single-thread R code to parallel pipelines.</li>
+                  <li>Contributed to micro-insurance product pricing for the Vietnam market with remittance payment mechanics.</li>
                 </ul>
               </div>
             </div>
@@ -338,13 +345,13 @@
           <!-- Timeline Item 4 -->
           <div class="timeline-item scroll-reveal">
             <div class="timeline-dot"></div>
-            <div class="card">
+            <div>
               <div class="timeline-header">
                 <div>
                   <h3 class="timeline-title">Actuarial Intern</h3>
                   <div class="timeline-meta">
                     <span>Milliman</span>
-                    <span>•</span>
+                    <span>&middot;</span>
                     <span>Remote</span>
                   </div>
                 </div>
@@ -362,112 +369,69 @@
       </div>
     </section>
 
-    <!-- Key Metrics Section -->
-    <section class="section" style="background-color: var(--color-bg);">
+    <!-- Stack -->
+    <section class="section" id="skills">
       <div class="container">
-        <div class="grid grid-4">
-          <!-- Metric 1 -->
-          <div class="metric-card scroll-reveal">
-            <div class="metric-number" id="metric-assets">$1.0T+</div>
-            <div class="metric-label">Fund Exposure Modeled</div>
-            <div class="metric-desc">Annuitized fund values analyzed and engineered inside Databricks.</div>
-          </div>
-          <!-- Metric 2 -->
-          <div class="metric-card scroll-reveal">
-            <div class="metric-number" id="metric-records">1B+</div>
-            <div class="metric-label">Records Processed</div>
-            <div class="metric-desc">Actuarial experience study files processed using parallel Spark clusters.</div>
-          </div>
-          <!-- Metric 3 -->
-          <div class="metric-card scroll-reveal">
-            <div class="metric-number" id="metric-speed">40%+</div>
-            <div class="metric-label">Runtime Reduction</div>
-            <div class="metric-desc">Optimization of PySpark operations and Delta Lake clustering.</div>
-          </div>
-          <!-- Metric 4 -->
-          <div class="metric-card scroll-reveal">
-            <div class="metric-number" id="metric-exams">10</div>
-            <div class="metric-label">Actuarial Exams Passed</div>
-            <div class="metric-desc">Associate of Institute and Faculty of Actuaries (AIA) credentials.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tech Stack / Skills Section -->
-    <section class="section section-alt" id="skills">
-      <div class="container">
-        <div style="max-width: 700px; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Technical Toolset</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Tech Stack & Tools</h2>
-          <p style="color: var(--color-text-secondary);">
-            Proven expertise in utilizing cloud platforms, mathematical languages, and specialized valuation software to engineer data and model risk.
-          </p>
+        <hr class="hairline" style="margin-bottom: var(--spacing-lg);">
+        <span class="section-label">Working stack</span>
+        <div style="max-width: 680px; margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: var(--font-size-xxl);">The tools are ordinary. The way they are put together is not.</h2>
         </div>
 
-        <div class="grid grid-3">
-          <!-- Category 1: Languages -->
-          <div class="card grid-container scroll-reveal">
+        <div class="grid grid-3" style="gap: var(--spacing-xl);">
+          <!-- Languages -->
+          <div class="grid-container scroll-reveal">
             <h3 class="tech-category-title">Languages</h3>
             <div class="tech-grid-items">
-              <!-- Python -->
               <div class="tech-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" class="tech-icon" width="48" height="48" loading="lazy">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" class="tech-icon" width="36" height="36" loading="lazy">
                 <span class="tech-name">Python</span>
               </div>
-              <!-- R -->
               <div class="tech-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" class="tech-icon" width="48" height="48" loading="lazy">
-                <span class="tech-name">R Language</span>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" class="tech-icon" width="36" height="36" loading="lazy">
+                <span class="tech-name">R</span>
               </div>
-              <!-- SQL -->
               <div class="tech-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" class="tech-icon" width="48" height="48" loading="lazy">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="" class="tech-icon" width="36" height="36" loading="lazy">
                 <span class="tech-name">SQL</span>
               </div>
             </div>
           </div>
 
-          <!-- Category 2: Platform / Engineering -->
-          <div class="card grid-container scroll-reveal">
-            <h3 class="tech-category-title">Data & Cloud</h3>
+          <!-- Data & Cloud -->
+          <div class="grid-container scroll-reveal">
+            <h3 class="tech-category-title">Data &amp; Cloud</h3>
             <div class="tech-grid-items">
-              <!-- Databricks -->
               <div class="tech-card">
-                <img src="assets/databricks_logo.png" alt="Databricks Logo" class="tech-icon" width="48" height="48" loading="lazy">
+                <img src="assets/databricks_logo.png" alt="" class="tech-icon" width="36" height="36" loading="lazy">
                 <span class="tech-name">Databricks</span>
               </div>
-              <!-- Azure -->
               <div class="tech-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="" class="tech-icon" width="48" height="48" loading="lazy">
-                <span class="tech-name">Azure Cloud</span>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="" class="tech-icon" width="36" height="36" loading="lazy">
+                <span class="tech-name">Azure</span>
               </div>
-              <!-- Snowflake -->
               <div class="tech-card">
-                <img src="assets/snowflake_logo.png" alt="Snowflake Logo" class="tech-icon" width="48" height="48" loading="lazy">
-                <span class="tech-name">Snowflake</span>
+                <img src="https://api.iconify.design/simple-icons:mlflow.svg?color=%23796e65" alt="" class="tech-icon" width="36" height="36" loading="lazy">
+                <span class="tech-name">MLflow</span>
               </div>
             </div>
           </div>
 
-          <!-- Category 3: Actuarial / BI -->
-          <div class="card grid-container scroll-reveal">
-            <h3 class="tech-category-title">Actuarial & BI</h3>
+          <!-- Actuarial & BI -->
+          <div class="grid-container scroll-reveal">
+            <h3 class="tech-category-title">Actuarial &amp; BI</h3>
             <div class="tech-grid-items">
-              <!-- Excel -->
               <div class="tech-card">
-                <img src="https://api.iconify.design/simple-icons:microsoftexcel.svg?color=%23107c41" alt="Excel Logo" class="tech-icon" width="48" height="48" loading="lazy">
-                <span class="tech-name">Excel</span>
+                <img src="https://api.iconify.design/simple-icons:microsoftexcel.svg?color=%23796e65" alt="" class="tech-icon" width="36" height="36" loading="lazy">
+                <span class="tech-name">Excel / VBA</span>
               </div>
-              <!-- Power BI -->
               <div class="tech-card">
-                <img src="https://api.iconify.design/simple-icons:powerbi.svg?color=%23f2c811" alt="Power BI Logo" class="tech-icon" width="48" height="48" loading="lazy">
+                <img src="https://api.iconify.design/simple-icons:powerbi.svg?color=%23796e65" alt="" class="tech-icon" width="36" height="36" loading="lazy">
                 <span class="tech-name">Power BI</span>
               </div>
-              <!-- GGY-AXIS -->
-              <div class="tech-card" style="justify-content: space-between;">
-                <div style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; color: var(--color-accent);">AXIS</div>
-                <span class="tech-name">GGY-AXIS</span>
+              <div class="tech-card">
+                <div style="font-family: var(--font-heading); font-weight: 700; font-size: var(--font-size-md); color: var(--color-text-secondary); height: 36px; display: flex; align-items: center;">AXIS</div>
+                <span class="tech-name">GGY-AXIS / MG-ALFA</span>
               </div>
             </div>
           </div>
@@ -475,283 +439,238 @@
       </div>
     </section>
 
-    <!-- Consulting Engagement Structure -->
+    <!-- Engagement models — the one place chromatic accent strokes appear -->
     <section class="section" id="engagement-models">
-      <div class="container-narrow">
-        <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Engagement models</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Consulting Structure & Delivery</h2>
-          <p style="color: var(--color-text-secondary); max-width: 600px; margin-inline: auto;">
-            Collaborating with insurers, reinsurers, and consulting firms under flexible technical delivery frameworks.
-          </p>
+      <div class="container">
+        <hr class="hairline" style="margin-bottom: var(--spacing-lg);">
+        <span class="section-label">Ways of working</span>
+        <div style="max-width: 680px; margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: var(--font-size-xxl);">Three engagement shapes.</h2>
         </div>
 
         <div class="grid grid-3">
-          <!-- Model 1: Strategic Support -->
-          <div class="card scroll-reveal">
-            <h3 style="font-size: var(--font-size-md); font-weight: 700; margin-bottom: var(--spacing-xs); color: var(--color-accent);">Strategic Support</h3>
+          <div class="accent-card accent-card--aubergine scroll-reveal">
+            <span class="section-label" style="margin-bottom: var(--spacing-sm);">Strategic support</span>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
-              Technical advisory during discovery phases, drafting narratives for proposals, conducting feasibility studies, and modeling risk profiles.
+              Technical advisory during discovery: drafting proposal narratives, feasibility studies, and risk quantification for prospective products.
             </p>
-            <div style="font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; color: var(--color-text-primary);">Feasibility & Strategy</div>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Feasibility &amp; strategy</div>
           </div>
 
-          <!-- Model 2: Custom Tools -->
-          <div class="card scroll-reveal">
-            <h3 style="font-size: var(--font-size-md); font-weight: 700; margin-bottom: var(--spacing-xs); color: var(--color-accent);">Production Deliveries</h3>
+          <div class="accent-card accent-card--cobalt scroll-reveal">
+            <span class="section-label" style="margin-bottom: var(--spacing-sm);">Production delivery</span>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
-              Deploying production-ready Python, R, and SQL scripts alongside custom reporting frameworks and dynamic scenario-testing visualizers.
+              Production-ready Python, R, and SQL alongside reporting frameworks and dynamic scenario-testing visualizers your team keeps.
             </p>
-            <div style="font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; color: var(--color-text-primary);">Production Codebases</div>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Production codebases</div>
           </div>
 
-          <!-- Model 3: System Modernization -->
-          <div class="card scroll-reveal">
-            <h3 style="font-size: var(--font-size-md); font-weight: 700; margin-bottom: var(--spacing-xs); color: var(--color-accent);">System Modernization</h3>
+          <div class="accent-card accent-card--iris scroll-reveal">
+            <span class="section-label" style="margin-bottom: var(--spacing-sm);">System modernization</span>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
-              Rebuilding legacy calculations into scalable cloud architectures (Databricks) and providing team handoffs with detailed documentation.
+              Legacy calculations rebuilt into scalable cloud architectures (Databricks), then handed off with documentation and team training.
             </p>
-            <div style="font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; color: var(--color-text-primary);">Handoff & Onboarding</div>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Handoff &amp; onboarding</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Resume Highlight section -->
-    <section class="section section-alt" id="resume">
+    <!-- Credentials -->
+    <section class="section" id="resume">
       <div class="container-narrow">
-        <div class="glass-card scroll-reveal" style="text-align: center; display: flex; flex-direction: column; gap: var(--spacing-md); align-items: center;">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Curriculum Vitae</span>
-          <h2 style="font-size: var(--font-size-xl);">Credentials & Education</h2>
-          
-          <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); margin-block: var(--spacing-sm); text-align: left; width: 100%; max-width: 480px; margin-inline: auto;">
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-surface-border); padding-bottom: var(--spacing-xs);">
-              <span style="font-weight: 600;">Associate of Institute of Actuaries (AIA)</span>
-              <span></span>
-            </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-surface-border); padding-bottom: var(--spacing-xs);">
-              <span style="font-weight: 600;">B.Sc. (H) Mathematics</span>
-              <span>Delhi University (Kirori Mal)</span>
-            </div>
-          </div>
+        <hr class="hairline" style="margin-bottom: var(--spacing-lg);">
+        <span class="section-label">Credentials</span>
+        <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-lg);">Qualifications on the record.</h2>
 
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); max-width: 500px;">
-            Access my complete credentials, experience summaries, and service portfolios by downloading the documents below.
-          </p>
-
-          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center;">
-            <a href="assets/Yash_Bhatt_Resume.pdf" class="btn btn-primary" download>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
-              </svg>
-              Download Resume (PDF)
-            </a>
-            <a href="assets/Yash_Actuarial_Analytics_Proposal.pdf" class="btn btn-secondary" target="_blank" rel="noopener">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
-              View Consulting Proposal (PDF)
-            </a>
+        <dl class="data-table" style="margin-bottom: var(--spacing-lg);">
+          <div class="data-row">
+            <dt>Professional credential</dt>
+            <dd>Associate, Institute and Faculty of Actuaries (AIA)</dd>
           </div>
+          <div class="data-row">
+            <dt>Actuarial exams passed</dt>
+            <dd>CS1 · CS2 · CM1 · CM2 · CB1 · CB2 · CB3 · CP1 · CP2 · CP3</dd>
+          </div>
+          <div class="data-row">
+            <dt>Degree</dt>
+            <dd>B.Sc. (H) Mathematics, Kirori Mal College, University of Delhi</dd>
+          </div>
+          <div class="data-row">
+            <dt>Consulting since</dt>
+            <dd>January 2025 (independent) · 2020 (in practice)</dd>
+          </div>
+        </dl>
+
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
+          <a href="assets/Yash_Bhatt_Resume.pdf" class="btn btn-primary" download>Download r&eacute;sum&eacute; (PDF)</a>
+          <a href="assets/Yash_Actuarial_Analytics_Proposal.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View consulting proposal (PDF)</a>
         </div>
       </div>
     </section>
 
-    <!-- Featured Insights & Articles Section -->
+    <!-- Writing -->
     <section class="section" id="insights">
       <div class="container">
-        <div style="max-width: 700px; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Insights</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Articles</h2>
-          <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
-            Deep dives into climate risk triggers, distributed spark pipelines, and machine learning models in actuarial practice.
+        <hr class="hairline" style="margin-bottom: var(--spacing-lg);">
+        <span class="section-label">Writing</span>
+        <div style="max-width: 680px; margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: var(--font-size-xxl); margin-bottom: var(--spacing-md);">Notes from practice.</h2>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: 1.41;">
+            Climate-risk triggers, mortality basis work, distributed Spark pipelines, and what model governance actually requires — written from the projects, not about them.
           </p>
-          
-          <!-- Quick Selection Dropdown -->
-          <div style="position: relative; display: inline-block; margin-top: var(--spacing-xs);">
-            <select onchange="if(this.value) window.location.href=this.value" style="background-color: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-surface-border); padding: 8px 32px 8px 12px; border-radius: var(--radius-sm); font-size: var(--font-size-xs); cursor: pointer; appearance: none; -webkit-appearance: none; font-weight: 500; min-width: 280px; outline: none; transition: border-color 0.2s;">
-              <option value="" selected disabled>Select an article to read...</option>
-              <option value="articles/parametric-insurance-climate-risk.html">1. Parametric Insurance & Climate Risk</option>
-              <option value="articles/designing-pricing-multi-peril-parametric.html">2. Designing & Pricing Parametric Products</option>
-              <option value="articles/predictive-analytics-life-insurance.html">3. Predictive Analytics in Life Insurance</option>
-              <option value="articles/modernizing-actuarial-modeling-vm21.html">4. Modernizing Actuarial Modeling (VM-21)</option>
-              <option value="articles/billion-record-experience-study-spark.html">5. Billion-Record Experience Study Pipelines</option>
-            </select>
-            <div style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-text-muted); font-size: 10px;">
-              ▼
-            </div>
-          </div>
         </div>
 
-        <div class="grid grid-3">
-          <!-- Article 1 -->
-          <div class="insight-card scroll-reveal">
-            <span class="insight-badge">Parametric Climate</span>
-            <div class="insight-content">
-              <h3 class="insight-title">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk</h3>
-              <p class="insight-excerpt">
-                Traditional indemnity insurance can take months to pay. Parametric insurance pays instantly on index breach. Exploring trigger speed and transparency in emerging markets.
-              </p>
-            </div>
-            <div class="insight-footer">
-              <span class="insight-date">Published May 2026</span>
-              <a href="articles/parametric-insurance-climate-risk.html" class="btn btn-link">Read Article &rarr;</a>
-            </div>
-          </div>
-
-          <!-- Article 2 -->
-          <div class="insight-card scroll-reveal">
-            <span class="insight-badge">Parametric Climate</span>
-            <div class="insight-content">
-              <h3 class="insight-title">Designing and Pricing a Multi-Peril Parametric Product</h3>
-              <p class="insight-excerpt">
-                A practitioner's guide to index calibration, payout structures, historical burn cost, average annual loss (AAL), and Python-based stress testing for regional portfolios.
-              </p>
-            </div>
-            <div class="insight-footer">
-              <span class="insight-date">Published May 2026</span>
-              <a href="articles/designing-pricing-multi-peril-parametric.html" class="btn btn-link">Read Article &rarr;</a>
-            </div>
-          </div>
-
-          <!-- Article 3 -->
-          <div class="insight-card scroll-reveal">
-            <span class="insight-badge">Reinsurance Pricing</span>
-            <div class="insight-content">
-              <h3 class="insight-title">Predictive Analytics in Life Insurance: From Mortality to ML</h3>
-              <p class="insight-excerpt">
-                Calibrating mortality improvement curves using splines/GLMs, building XGBoost risk scores for reinsurance pricing, and modeling shock annuity surrenders in high-rate climates.
-              </p>
-            </div>
-            <div class="insight-footer">
-              <span class="insight-date">Published May 2026</span>
-              <a href="articles/predictive-analytics-life-insurance.html" class="btn btn-link">Read Article &rarr;</a>
-            </div>
-          </div>
-
-          <!-- Article 4 -->
-          <div class="insight-card scroll-reveal">
-            <span class="insight-badge">Distributed Systems</span>
-            <div class="insight-content">
-              <h3 class="insight-title">Modernizing Actuarial Modeling: Moving VM-21 to Databricks</h3>
-              <p class="insight-excerpt">
-                Moving VM-21 principle-based reserving calculations off Excel and onto Spark/Delta Lake. Achieving 10x runtimes, robust model risk governance, and full audit trails.
-              </p>
-            </div>
-            <div class="insight-footer">
-              <span class="insight-date">Published May 2026</span>
-              <a href="articles/modernizing-actuarial-modeling-vm21.html" class="btn btn-link">Read Article &rarr;</a>
-            </div>
-          </div>
-
-          <!-- Article 5 -->
-          <div class="insight-card scroll-reveal">
-            <span class="insight-badge">Distributed Systems</span>
-            <div class="insight-content">
-              <h3 class="insight-title">Building Billion-Record Study Pipelines with Spark & MLflow</h3>
-              <p class="insight-excerpt">
-                How a medallion lakehouse design pattern and optimized PySpark SQL scale studies of 1B+ annuity records, with MLflow tracking and sparkR transition bridges.
-              </p>
-            </div>
-            <div class="insight-footer">
-              <span class="insight-date">Published May 2026</span>
-              <a href="articles/billion-record-experience-study-spark.html" class="btn btn-link">Read Article &rarr;</a>
-            </div>
-          </div>
+        <div class="article-index">
+          <a href="articles/parametric-insurance-climate-risk.html" class="article-row scroll-reveal">
+            <span class="article-row-num">01</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Parametric Insurance: The Fast, Data-Driven Answer to Climate Risk</span>
+              <span class="article-row-tag">Parametric climate</span>
+            </span>
+            <span class="article-row-date">May 2026</span>
+          </a>
+          <a href="articles/designing-pricing-multi-peril-parametric.html" class="article-row scroll-reveal">
+            <span class="article-row-num">02</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Designing and Pricing a Multi-Peril Parametric Product</span>
+              <span class="article-row-tag">Parametric climate</span>
+            </span>
+            <span class="article-row-date">Jan 2026</span>
+          </a>
+          <a href="articles/mortality-curves-actuarial-laws-glm-splines.html" class="article-row scroll-reveal">
+            <span class="article-row-num">03</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Mortality Curves You Can Defend: Actuarial Laws and GLM Splines</span>
+              <span class="article-row-tag">Reinsurance pricing</span>
+            </span>
+            <span class="article-row-date">Jun 2026</span>
+          </a>
+          <a href="articles/predictive-analytics-life-insurance.html" class="article-row scroll-reveal">
+            <span class="article-row-num">04</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Predictive Analytics in Life Insurance: From Mortality to ML</span>
+              <span class="article-row-tag">Reinsurance pricing</span>
+            </span>
+            <span class="article-row-date">Sep 2025</span>
+          </a>
+          <a href="articles/microinsurance-vietnam-remittance.html" class="article-row scroll-reveal">
+            <span class="article-row-num">05</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Micro-Insurance at Remittance Scale: Notes from a Vietnam MVP</span>
+              <span class="article-row-tag">Product design</span>
+            </span>
+            <span class="article-row-date">Mar 2026</span>
+          </a>
+          <a href="articles/modernizing-actuarial-modeling-vm21.html" class="article-row scroll-reveal">
+            <span class="article-row-num">06</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Modernizing Actuarial Modeling: Moving VM-21 to Databricks</span>
+              <span class="article-row-tag">Distributed systems</span>
+            </span>
+            <span class="article-row-date">Jan 2025</span>
+          </a>
+          <a href="articles/billion-record-experience-study-spark.html" class="article-row scroll-reveal">
+            <span class="article-row-num">07</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Building Billion-Record Study Pipelines with Spark &amp; MLflow</span>
+              <span class="article-row-tag">Distributed systems</span>
+            </span>
+            <span class="article-row-date">Jan 2025</span>
+          </a>
+          <a href="articles/model-governance-platform-migration.html" class="article-row scroll-reveal">
+            <span class="article-row-num">08</span>
+            <span class="article-row-body">
+              <span class="article-row-title">Model Risk in the Migration: Governance When Models Change Platforms</span>
+              <span class="article-row-tag">Model governance</span>
+            </span>
+            <span class="article-row-date">Jul 2026</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Contact Me Section -->
-    <section class="section section-alt" id="contact">
+    <!-- Quiet interstitial -->
+    <img src="assets/photos/river-dawn.jpg" alt="A river running through a misty valley at dawn" class="full-bleed" loading="lazy">
+
+    <!-- Contact -->
+    <section class="section" id="contact">
       <div class="container-narrow">
-        <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-          <span style="color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em;">Engagement</span>
-          <h2 style="font-size: var(--font-size-xxl); margin-block: var(--spacing-xs) var(--spacing-sm);">Start a Technical Partnership</h2>
-          <p style="color: var(--color-text-secondary); max-width: 500px; margin-inline: auto;">
-            Reach out to discuss pricing validations, custom parametric triggers, system modernization audits, or contract valuations.
+        <span class="section-label">Contact</span>
+        <div style="max-width: 560px; margin-bottom: var(--spacing-xl);">
+          <h2 style="font-size: var(--font-size-xxl); margin-bottom: var(--spacing-md);">Book a 30-minute scoping call.</h2>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-size-base); line-height: 1.41;">
+            Tell me what you're pricing or modernizing and I'll tell you whether I can help and how I'd scope it. If it's not a fit, I'll say so. Reply within one business day — or email <a href="mailto:b.yash289@gmail.com" style="text-decoration: underline; text-underline-offset: 4px;">b.yash289@gmail.com</a> directly.
           </p>
         </div>
 
-        <div class="glass-card scroll-reveal" style="padding: var(--spacing-xl);">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="grid grid-2">
-              <div class="form-group">
-                <label for="form-name" class="form-label">Full Name</label>
-                <input type="text" id="form-name" name="name" class="form-control" placeholder="e.g. John Doe" required>
-              </div>
-              <div class="form-group">
-                <label for="form-email" class="form-label">Email Address</label>
-                <input type="email" id="form-email" name="email" class="form-control" placeholder="e.g. john@company.com" required>
-              </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="form-name" class="form-label">Full name</label>
+              <input type="text" id="form-name" name="name" class="form-control" placeholder="Jane Doe" required>
             </div>
             <div class="form-group">
-              <label for="form-subject" class="form-label">Subject</label>
-              <input type="text" id="form-subject" name="subject" class="form-control" placeholder="e.g. Parametric Climate Risk Pricing Review" required>
+              <label for="form-email" class="form-label">Email address</label>
+              <input type="email" id="form-email" name="email" class="form-control" placeholder="jane@company.com" required>
             </div>
-            <div class="form-group">
-              <label for="form-message" class="form-label">Message</label>
-              <textarea id="form-message" name="message" class="form-control" placeholder="Describe the modeling objective or consultation scope..." required></textarea>
-            </div>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin-top: var(--spacing-sm); justify-content: space-between; align-items: center;">
-              <a href="mailto:b.yash289@gmail.com" class="btn" style="background-color: #16a34a; color: #fff; border-color: #16a34a;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
-                Send Quick Email
-              </a>
-              <button type="submit" class="btn btn-primary">Send Secure Message</button>
-            </div>
-            
-            <!-- Success/Error Feedback UI -->
-            <div class="form-alert form-alert-success" id="formAlertSuccess" role="alert">
-              Your inquiry has been sent successfully. I will get back to you within 24 business hours.
-            </div>
-            <div class="form-alert form-alert-error" id="formAlertError" role="alert">
-              Please correct the highlighted errors before submitting the form.
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="form-group">
+            <label for="form-subject" class="form-label">Subject</label>
+            <input type="text" id="form-subject" name="subject" class="form-control" placeholder="e.g. Parametric climate pricing review" required>
+          </div>
+          <div class="form-group">
+            <label for="form-message" class="form-label">What are you pricing or modernizing?</label>
+            <textarea id="form-message" name="message" class="form-control" placeholder="A sentence or two on the modeling objective or scope." required></textarea>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); margin-top: var(--spacing-sm); align-items: center;">
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </div>
+
+          <!-- Success/Error Feedback UI -->
+          <div class="form-alert form-alert-success" id="formAlertSuccess" role="alert">
+            Your inquiry has been sent. I will reply within one business day.
+          </div>
+          <div class="form-alert form-alert-error" id="formAlertError" role="alert">
+            Please correct the highlighted fields before submitting.
+          </div>
+        </form>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid grid">
       <div class="footer-brand">
-        <a href="#hero" class="logo" style="font-size: var(--font-size-md);">
-          YASH BHATT
+        <a href="#hero" class="logo">
+          Yash Bhatt
         </a>
         <p class="footer-brand-text">
-          Independent Pricing & Product Development Consultant. Associate of the Institute of Actuaries.
+          Independent pricing &amp; product development consultant. Associate of the Institute and Faculty of Actuaries.
         </p>
       </div>
 
       <div>
-        <h3 class="footer-links-title">Quick Links</h3>
+        <h3 class="footer-links-title">Site</h3>
         <ul class="footer-links-list">
-          <li><a href="#about" class="footer-link">Expertise Capabilities</a></li>
-          <li><a href="#experience" class="footer-link">Experience Timeline</a></li>
-          <li><a href="#skills" class="footer-link">Tools & Tech</a></li>
-          <li><a href="#engagement-models" class="footer-link">Engagement Models</a></li>
+          <li><a href="#profile" class="footer-link">About</a></li>
+          <li><a href="#about" class="footer-link">Practice areas</a></li>
+          <li><a href="#experience" class="footer-link">Experience</a></li>
+          <li><a href="#insights" class="footer-link">Writing</a></li>
+          <li><a href="tools/index.html" class="footer-link">Interactive tools</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="footer-links-title">Professional Profiles</h3>
+        <h3 class="footer-links-title">Elsewhere</h3>
         <ul class="footer-links-list">
-          <li><a href="https://linkedin.com/in/yashbhatt28" class="footer-link" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><a href="https://github.com/yash-bhatt" class="footer-link" target="_blank" rel="noopener">GitHub Profile</a></li>
-          <li><a href="mailto:b.yash289@gmail.com" class="footer-link">Email Direct</a></li>
-          <li><a href="tel:+919968112775" class="footer-link">Call +91 996-811-2775</a></li>
+          <li><a href="https://linkedin.com/in/yashbhatt28" class="footer-link" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/yash-bhatt" class="footer-link" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="mailto:b.yash289@gmail.com" class="footer-link">b.yash289@gmail.com</a></li>
+          <li><a href="tel:+919968112775" class="footer-link">+91 996-811-2775</a></li>
         </ul>
       </div>
     </div>
@@ -763,7 +682,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=1.4"></script>
-  <script src="js/scroll-effects.js?v=1.4"></script>
+  <script src="js/main.js?v=2.0"></script>
+  <script src="js/scroll-effects.js?v=2.0"></script>
 </body>
 </html>
